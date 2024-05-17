@@ -11,11 +11,11 @@ References: [Draft 2 Section 5.20](https://json-schema.org/draft-02/draft-zyp-js
 
 | Change Type | Format Attribute | Description                                                      |
 |-------------|------------------|------------------------------------------------------------------|
-| Deleted     | `street-address`  | This should be a street address                               |
-| Deleted     | `locality`         | This should be a city or town                                 |
-| Deleted     | `region`           | This should be a region (a state in the US, province in Canada, etc.) |
-| Deleted     | `postal-code`      | This should be a postal code (AKA zip code)                    |
-| Deleted     | `country`          | This should be the name of a country|
+| Deleted     | `street-address`  | This SHOULD be a street address                               |
+| Deleted     | `locality`         | This SHOULD be a city or town                                 |
+| Deleted     | `region`           | This SHOULD be a region (a state in the US, province in Canada, etc.) |
+| Deleted     | `postal-code`      | This SHOULD be a postal code (AKA zip code)                    |
+| Deleted     | `country`          | This SHOULD be the name of a country|
 | Added       | `host-name`        | This SHOULD be a host-name                                     |
  
 
@@ -46,10 +46,10 @@ References: [Draft 3 Section 5.23](https://json-schema.org/draft-02/draft-zyp-js
 | Attribute   | Previous Description                                                                      | Present Description           |
 |-------------|-------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
 | `date-time`   | This SHOULD be a date in ISO 8601 format of YYYY-MMDDThh:mm:ssZ in UTC time. This is... | A string instance is valid against this attribute if it is a valid date representation as defined by RFC 3339, section 5.6[RFC3339]                           |
-| `URI`         | Should be a uri                                                                           | A string instance is valid against this attribute if it is a valid URI, according to [RFC3986]          |
-| `email`       | Should be email                                                                           | A string instance is valid against this attribute if it is a valid Internet email address as defined by RFC 5322, section 3.4.1 [RFC5322]                        |
-| `ip-address`  | Should be internet protocol version 4 address                                                                 | ipv4: A string instance is valid against this attribute if it is a valid representation of an IPv4 address according to the `dotted-quad` ABNF syntax as defined in RFC 2673, section 3.2 [RFC2673] |
-| `ipv6`        | Should be internet protocol version 6 address                                                                 | A string instance is valid against this attribute if it is a valid representation of an IPv6 address as defined in RFC 2373, section 2.2 [RFC2373]                |
+| `URI`         | SHOULD be a uri                                                                           | A string instance is valid against this attribute if it is a valid URI, according to [RFC3986]          |
+| `email`       | SHOULD be email                                                                           | A string instance is valid against this attribute if it is a valid Internet email address as defined by RFC 5322, section 3.4.1 [RFC5322]                        |
+| `ip-address`  | SHOULD be internet protocol version 4 address                                                                 | ipv4: A string instance is valid against this attribute if it is a valid representation of an IPv4 address according to the `dotted-quad` ABNF syntax as defined in RFC 2673, section 3.2 [RFC2673] |
+| `ipv6`        | SHOULD be internet protocol version 6 address                                                                 | A string instance is valid against this attribute if it is a valid representation of an IPv6 address as defined in RFC 2373, section 2.2 [RFC2373]                |
 | `host-name`   | This SHOULD be a host-name                                                               | A string instance is valid against this attribute if it is a valid representation for an Internet host name, as defined by RFC 1034, section 3.1 [RFC1034]           |
 
 ## Draft 4 to Draft 6
