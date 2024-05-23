@@ -1,15 +1,18 @@
 # Research on `format` keyword 
 Changes in `format` Keyword Behaviour Across all JSON Schema Drafts: Additions, Deletions, and Upgrades.
 
-## Draft 0 to Draft 2 (No changes)
+## Draft 0 to Draft 2 
+No changes
 
 ## Draft 2 to Draft 3
 
 References: [Draft 2 Section 5.20](https://json-schema.org/draft-02/draft-zyp-json-schema-02.txt), [Draft 3 Section 5.23](https://json-schema.org/draft-03/draft-zyp-json-schema-03.pdf)
 
 > Behaviour:   
-      >>[Before](https://json-schema.org/draft-02/draft-zyp-json-schema-02.txt): Not required to validate  
-        [After](https://json-schema.org/draft-03/draft-zyp-json-schema-03.pdf): MAY validate (but aren’t required to)
+      >>[Before](https://json-schema.org/draft-02/draft-zyp-json-schema-02.txt):      
+        Not required to validate - Which means the `format` keyword isn't supposed to do validation by default.  
+        [After](https://json-schema.org/draft-03/draft-zyp-json-schema-03.pdf):   
+        MAY validate (but aren’t required to) - Default v   alidation or no validation are implementation dependent.
 
 | Change Type | Format Attribute | Description                                                      |
 |-------------|------------------|------------------------------------------------------------------|
@@ -65,7 +68,6 @@ References: [Draft 6](https://json-schema.org/draft-06/draft-wright-json-schema-
 |             |                            | Implementations MAY support additional attributes using the other production names defined in that section. If `full-date` or `full-time` are implemented, the corresponding short form (`date` or `time` respectively) MUST be implemented and MUST behave identically. Implementations SHOULD NOT define extension attributes with any name matching an [RFC 3339](https://www.rfc-editor.org/info/rfc3339) production unless it validates according to the rules of that production |
 | Added       | `idn-email`                  | As defined by RFC 6531 [RFC6531](https://www.rfc-editor.org/info/rfc6531) |
 | | |idn-email is a superset of email              |
-| Added       | `hostname`                   | As defined by RFC 1034, section 3.1 [RFC1034](https://www.rfc-editor.org/info/rfc1034), including host names produced using the Punycode algorithm specified in RFC 5891, section 4.4 [RFC5891](https://www.rfc-editor.org/info/rfc5891) |
 | Added       | `idn-hostname`               | As defined by either RFC 1034 as for hostname, or an internationalized hostname as defined by RFC 5890, section 2.3.2.3 [RFC5890](https://www.rfc-editor.org/info/rfc5890)  |
 |||idn-hostname is a superset of hostname|
 | Added       | `ipv6`                       | A string instance is valid against this attribute if it is a valid representation of an IPv6 address as defined in RFC 2373, section 2.2 [RFC2373](https://www.rfc-editor.org/info/rfc2373) An IPv6 address as defined in RFC 4291, section 2.2 [RFC4291](https://www.rfc-editor.org/info/rfc4291) |
