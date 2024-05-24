@@ -12,7 +12,7 @@ References: [Draft 2 Section 5.20](https://json-schema.org/draft-02/draft-zyp-js
       >>[Before](https://json-schema.org/draft-02/draft-zyp-json-schema-02.txt):      
         Not required to validate - Which means the `format` keyword isn't supposed to do validation by default.  
         [After](https://json-schema.org/draft-03/draft-zyp-json-schema-03.pdf):   
-        MAY validate (but aren’t required to) - Default v   alidation or no validation are implementation dependent.
+        MAY validate (but aren’t required to) - It is implementation dependent whether `format` is a validation or not by DEFAULT.
 
 | Change Type | Format Attribute | Description                                                      |
 |-------------|------------------|------------------------------------------------------------------|
@@ -29,7 +29,8 @@ References: [Draft 3 Section 5.23](https://json-schema.org/draft-03/draft-zyp-js
 )
 
 > Behaviour:  
-      >>[Before](https://json-schema.org/draft-03/draft-zyp-json-schema-03.pdf): MAY validate.   
+      >>[Before](https://json-schema.org/draft-03/draft-zyp-json-schema-03.pdf):  
+      MAY validate - It is implementation dependent whether `format` is a validation or not by DEFAULT.   
       [After](https://json-schema.org/draft-04/draft-fge-json-schema-validation-00#rfc.section.7.2):  
       a. they SHOULD implement validation for all the format attributes.   
       b. they SHOULD offer an option to disable validation for this keyword.  
@@ -44,6 +45,13 @@ References: [Draft 3 Section 5.23](https://json-schema.org/draft-03/draft-zyp-js
 | Deleted     | `color`            | This is a CSS color (like `#FF0000` or `red`), based on [CSS 21](https://www.w3.org/TR/2007/CR-CSS21-20070719/)                          |
 | Deleted     | `style`            | This is a CSS style definition (like `color: red; backgroundcolor:#FFF`), based on [CSS 2.1](https://www.w3.org/TR/2007/CR-CSS21-20070719/) |
 | Deleted     | `phone`            | This SHOULD be a phone number (format MAY follow E.123)                                  |
+
+### Changes :
+
+| Previous Keyword   | After Keyword |
+| :-----------:      |  :---------:  | 
+| `ip-address`       | `ipv4`        |
+| `host-name`        | `hostname`    | 
 
 ## Draft 4 to Draft 6
 
@@ -70,7 +78,6 @@ References: [Draft 6](https://json-schema.org/draft-06/draft-wright-json-schema-
 | | |idn-email is a superset of email              |
 | Added       | `idn-hostname`               | As defined by either RFC 1034 as for hostname, or an internationalized hostname as defined by RFC 5890, section 2.3.2.3 [RFC5890](https://www.rfc-editor.org/info/rfc5890)  |
 |||idn-hostname is a superset of hostname|
-| Added       | `ipv6`                       | A string instance is valid against this attribute if it is a valid representation of an IPv6 address as defined in RFC 2373, section 2.2 [RFC2373](https://www.rfc-editor.org/info/rfc2373) An IPv6 address as defined in RFC 4291, section 2.2 [RFC4291](https://www.rfc-editor.org/info/rfc4291) |
 | Added       | `iri`                        | A string instance is valid against this attribute if it is a valid IRI according to [RFC3987](https://www.rfc-editor.org/info/rfc3987)                                                          |
 | Added       | `iri-reference`              | A string instance is valid against this attribute if it is a valid IRI Reference (either an IRI or a relative-reference) according to [RFC3987](https://www.rfc-editor.org/info/rfc3987)  |
 |||iri is a superset of uri. iri-reference is a superset of uri-reference |
