@@ -30,12 +30,9 @@ This document provides an overview of a declarative Domain Specific Language (DS
 ### Array Operations
 
 - **contains**: Checks if the array contains the specified value.
-- **max-items**: Checks if the array has a maximum number of items.
-- **min-items**: Checks if the array has a minimum number of items.
 
 ### Object Operations
 
-- **max-properties**: Checks if the object has a maximum number of properties.
 - **min-properties**: Checks if the object has a minimum number of properties.
 
 ### Numeric Operations
