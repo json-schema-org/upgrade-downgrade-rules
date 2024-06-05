@@ -2,12 +2,12 @@
 
 This document provides an overview of a declarative Domain Specific Language (DSL) designed to check various conditions for upgrade and downgrade rules in this repository.
 
-## Why Not Use JSON Schema Validation?
+## Why Not Use JSON Schema?
 
 There are several reasons for opting against JSON Schema as the schema language for these conditions:
 
 - **Simplicity**: Implementers do not need a full-blown JSON Schema implementation to support upgrade/downgrade rules in their language of choice. This reduces the complexity and learning curve for developers.
-- **Performance**: JSON Schema validation can be slow, especially on Alterschema. By focusing on a subset of operations, we achieve much better performance.
+- **Performance**: Evaluating hundreds of JSON Schemas during upgrade/downgrade can be slow, as we learnt the hard way on Alterschema. By focusing on a subset of operations, we achieve much better performance.
 - **Specific Needs**: The modifications needed are typically only 1-2 levels deep, and only 20-30% of JSON Schema constraints are necessary to satisfy the conditions for upgrades/downgrades.
 
 ## DSL Structure
@@ -16,45 +16,55 @@ The DSL is structured as an array of conditions, with each condition containing 
 
 ### Condition Fields
 
-- `path`: Specifies the path to the target in the schema where the operation will be performed. It takes an array. Each element of the array can be:
-  - A string
-  - An object which can have pre-defined properties. Which is: `pattern`.
-    Given a pattern, all the keywords matching the pattern undergo condition check and transformation iteratively.  
-    Example: 
+| Property | Description | Required | Data Type |
+|---|---|---|---|
+| `path` | Specifies the path to the target in the schema where the operation will be performed | Yes | Array of strings or objects |
+| `operation` | Specifies the type of operation to perform at the target path | Yes | String (supported operations listed below) |
+| `value` | Specifies the value to be used in the operation | Yes | Depends on the chosen operation |
+| `{}` match-all (within `path`) | Enables all keywords within the path array to undergo condition check and transformation iteratively | No | Empty object |
 
-    #### Schema
-    ```json
-    {    
-      "$schema": "https://json-schema.org/draft-06/schema",
-      "properties": {
-        "foo": {
-            "required": true
-        },
-        "bar": {
-            "required": false
-        }
-      }
+#### `match-all` Property Explanation
+
+The match-all property allows operations to be applied to all the keywords at a specified path.
+
+Here's a detailed explanation:
+
+1. **Define an empty object:** You can add an empty object (`{}`) to the `path` array.
+2. **Matching and Iteration:** The specified operation is applied iteratively to all keywords in the path. The matched keywords undergo the specified transformation accordingly.
+
+**Example:**
+
+##### Schema
+```json
+{
+  "$schema": "https://json-schema.org/draft-06/schema",
+  "properties": {
+    "foo": {
+      "required": true
+    },
+    "bar": {
+      "required": false
     }
-    ```
-    #### Condition
-    ```json
-    [
-      { "path": [ "properties", { "pattern": ".*" } ], "operation": "has-key", "value": "required" }
-    ]
-    ```
+  }
+}
 
-- `operation`: Specifies the type of operation to perform at the target path. Should be a string and take one of the supported operations mentioned below.
+``` 
 
-- `value`: Specifies the value to be used in the operation. Should take a value supported by the respective operation chosen.
+##### Condition
+```json
+[
+  { "path": [ "properties", {} ], "operation": "has-key", "value": "required" }
+]
+```
 
 ## Operations
 
-### Any
+### Any primitive type
 
 #### Type Checks
 
 `type-is`: Checks if the type of the target matches the specified type.
- - **Value**: Should be a string with one of the primitive types: `integer`, `boolean`, `array`, `object`, `string`, `number`.
+ - **Value**: Must be a string with one of the primitive types: `integer`, `boolean`, `array`, `object`, `string`, `number`.
 
 ##### Schema
 ```json
@@ -73,7 +83,7 @@ The DSL is structured as an array of conditions, with each condition containing 
 #### Equality Checks
 
 `equals`: Checks if the target equals the specified value.
- - **Value**: Can be anything.
+ - **Value**: Can be any JSON value.
 
 ##### Schema
 ```json
@@ -91,7 +101,7 @@ The DSL is structured as an array of conditions, with each condition containing 
 ```
 
 `not-equals`: Checks if the target does not equal the specified value.
- - **Value**: Can be anything.
+ - **Value**: Can be any JSON value.
 
 ##### Condition
 ```json
@@ -101,7 +111,7 @@ The DSL is structured as an array of conditions, with each condition containing 
 ```
 
 `size-equals`: Checks if the size of the array or number of properties of the object equals the specified value.
- - **Value**: Should be a positive integer.
+ - **Value**: Must be a positive integer.
 
 ##### Schema
 ```json
@@ -116,22 +126,23 @@ The DSL is structured as an array of conditions, with each condition containing 
   { "path": [ "required" ], "operation": "size-equals", "value": 0 }
 ]
 ```
+<hr>
 
 ### Array Operations
 
-Presence check:
+#### Presence Checks
 
 `contains`: Checks if the array contains the specified value.
- - **Value**: Can be anything.
+ - **Value**: Can be any JSON value.
 
-#### Schema
+##### Schema
 ```json
 {    
   "$schema": "https://json-schema.org/draft-03/schema",
   "type": [ "any", { } ]
 }
 ```
-#### Condition
+##### Condition
 ```json
 [
   { "path": [ "type" ], "operation": "contains", "value": "any" }
@@ -139,23 +150,24 @@ Presence check:
 ```
 
 `contains-type`: Checks if an element in the array contains a specified type.
- - **Value**: Should be a string with one of the primitive types: `integer`, `boolean`, `array`, `object`, `string`, `number`.
+ - **Value**: Must be a string with one of the primitive types: `integer`, `boolean`, `array`, `object`, `string`, `number`.
 
-#### Condition
+##### Condition
 ```json
 [
   { "path": [ "type" ], "operation": "contains-type", "value": "object" }
 ]
 ```
+<hr>
 
 ### Object Operations
 
-Presence Checks:  
+#### Presence Checks
 
 `has-key`: Checks if the target object has the specified key.
- - **Value**: Should be a string as the objects will always have keys of type string.
+ - **Value**: Must be a string as the objects will always have keys of type string.
 
-#### Schema
+##### Schema
 ```json
 {
   "$schema": "https://json-schema.org/draft-03/schema",
@@ -166,19 +178,19 @@ Presence Checks:
   }
 }
 ```
-#### Condition
+##### Condition
 ```json
 [
-  { "path": [ "properties", { "pattern": ".*" } ], "operation": "has-key", "value": "required" }
+  { "path": [ "properties", {} ], "operation": "has-key", "value": "required" }
 ]
 ```
 
 Property Count Check:
 
 `min-properties`: Checks if the object has a minimum number of properties.
- - **Value**: Should be a positive integer.
+ - **Value**: Must be a positive integer.
 
-#### Schema
+##### Schema
 ```json
 { 
   "$schema": "https://json-schema.org/draft-07/schema",
@@ -189,47 +201,49 @@ Property Count Check:
   }
 }
 ```
-#### Condition
+##### Condition
 ```json
 [
   { "path": [ "items" ], "operation": "min-properties", "value": 2 }
 ]
 ```
+<hr>
 
 ### Numeric Operations
 
-Numeric Bound Check:
+#### Numeric Bound Check
 
 `maximum`: Checks if the numeric target is less than or equal to the specified value.
- - **Value**: Should be a number.
+ - **Value**: Must be a number.
 
-#### Schema
+##### Schema
 ```json
 {
   "$schema": "https://json-schema.org/draft-03/schema",
   "divisibleBy": -1
 }
 ```
-#### Condition
+##### Condition
 ```json
 [
   { "path": [ "divisibleBy" ], "operation": "maximum", "value": -1 }
 ]
 ```
+<hr>
 
 ### String Operations
 
 `match-pattern`: Checks if the string target matches the specified regex pattern.
- - **Value**: Should be a regular expression as per ECMA 262.
+ - **Value**: Must be a regular expression as per ECMA 262.
 
-#### Schema
+##### Schema
 ```json
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$anchor": "te:st"
 }
 ```
-#### Condition
+##### Condition
 ```json
 [
   { "path": [ "$anchor" ], "operation": "math-pattern", "value": ".*:.*" }
