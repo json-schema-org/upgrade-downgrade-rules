@@ -1,0 +1,73 @@
+[
+    {
+        "title": "Simple matching schema",
+        "from": {
+            "$schema": "https://json-schema.org/draft/2019-09/schema"
+        },
+        "to": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema"
+        }
+    },
+    {
+        "title": "Simple non matching schema",
+        "from": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema"
+        },
+        "to": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema"
+        }
+    },
+    {
+        "title": "Nested matching schema",
+        "from": {
+            "$schema": "https://json-schema.org/draft/2019-09/schema",
+            "$defs": {
+                "foo": {
+                    "$schema": "https://json-schema.org/draft/2019-09/schema"
+                }
+            }
+        },
+        "to": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "$defs": {
+                "foo": {
+                    "$schema": "https://json-schema.org/draft/2020-12/schema"
+                }
+            }
+        }
+    },
+    {
+        "title": "Nested half matching schema",
+        "from": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "$defs": {
+                "foo": {
+                    "$schema": "https://json-schema.org/draft/2019-09/schema"
+                }
+            }
+        },
+        "to": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "$defs": {
+                "foo": {
+                    "$schema": "https://json-schema.org/draft/2020-12/schema"
+                }
+            }
+        }
+    },
+    {
+        "title": "$schema inside unknown keyword",
+        "from": {
+            "$schema": "https://json-schema.org/draft/2019-09/schema",
+            "foo": {
+                "$schema": "https://json-schema.org/draft/2019-09/schema"
+            }
+        },
+        "to": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "foo": {
+                "$schema": "https://json-schema.org/draft/2019-09/schema"
+            }
+        }
+    }
+]
