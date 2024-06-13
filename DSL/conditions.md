@@ -35,6 +35,7 @@ Here's a detailed explanation:
 **Example:**
 
 ##### Schema
+
 ```json
 {
   "$schema": "https://json-schema.org/draft-06/schema",
@@ -48,9 +49,10 @@ Here's a detailed explanation:
   }
 }
 
-``` 
+```
 
 ##### Condition
+
 ```json
 [
   { "path": [ "properties", {} ], "operation": "has-key", "value": "required" }
@@ -64,16 +66,20 @@ Here's a detailed explanation:
 #### Type Checks
 
 `type-is`: Checks if the type of the target matches the specified type.
- - **Value**: Must be a string with one of the primitive types: `integer`, `boolean`, `array`, `object`, `string`, `number`.
+
+- **Value**: Must be a string with one of the primitive types: `integer`, `boolean`, `array`, `object`, `string`, `number`.
 
 ##### Schema
+
 ```json
 {    
   "$schema": "https://json-schema.org/draft-03/schema",
   "type": [ { "const": "hello" }, "number", "string" ]
 }
 ```
+
 ##### Condition
+
 ```json
 [
   { "path": [ "type" ], "operation": "type-is", "value": "array" }
@@ -83,9 +89,11 @@ Here's a detailed explanation:
 #### Equality Checks
 
 `equals`: Checks if the target equals the specified value.
- - **Value**: Can be any JSON value.
+
+- **Value**: Can be any JSON value.
 
 ##### Schema
+
 ```json
 {
   "$schema": "https://json-schema.org/draft-06/schema",
@@ -94,6 +102,7 @@ Here's a detailed explanation:
 ```
 
 ##### Condition
+
 ```json
 [
   { "path": [ "exclusiveMinimum" ], "operation": "equals", "value": 0 }
@@ -101,9 +110,11 @@ Here's a detailed explanation:
 ```
 
 `not-equals`: Checks if the target does not equal the specified value.
- - **Value**: Can be any JSON value.
+
+- **Value**: Can be any JSON value.
 
 ##### Condition
+
 ```json
 [
   { "path": [ "exclusiveMinimum" ], "operation": "not-equals", "value": -1 }
@@ -111,38 +122,47 @@ Here's a detailed explanation:
 ```
 
 `size-equals`: Checks if the size of the array or number of properties of the object equals the specified value.
- - **Value**: Must be a positive integer.
+
+- **Value**: Must be a positive integer.
 
 ##### Schema
+
 ```json
 {    
   "$schema": "https://json-schema.org/draft-06/schema",
   "required": [ ]
 }
 ```
+
 ##### Condition
+
 ```json
 [
   { "path": [ "required" ], "operation": "size-equals", "value": 0 }
 ]
 ```
-<hr>
+
+***
 
 ### Array Operations
 
 #### Presence Checks
 
 `contains`: Checks if the array contains the specified value.
- - **Value**: Can be any JSON value.
+
+- **Value**: Can be any JSON value.
 
 ##### Schema
+
 ```json
 {    
   "$schema": "https://json-schema.org/draft-03/schema",
   "type": [ "any", { } ]
 }
 ```
+
 ##### Condition
+
 ```json
 [
   { "path": [ "type" ], "operation": "contains", "value": "any" }
@@ -150,24 +170,29 @@ Here's a detailed explanation:
 ```
 
 `contains-type`: Checks if an element in the array contains a specified type.
- - **Value**: Must be a string with one of the primitive types: `integer`, `boolean`, `array`, `object`, `string`, `number`.
+
+- **Value**: Must be a string with one of the primitive types: `integer`, `boolean`, `array`, `object`, `string`, `number`.
 
 ##### Condition
+
 ```json
 [
   { "path": [ "type" ], "operation": "contains-type", "value": "object" }
 ]
 ```
-<hr>
+
+***
 
 ### Object Operations
 
 #### Presence Checks
 
 `has-key`: Checks if the target object has the specified key.
- - **Value**: Must be a string as the objects will always have keys of type string.
+
+- **Value**: Must be a string.
 
 ##### Schema
+
 ```json
 {
   "$schema": "https://json-schema.org/draft-03/schema",
@@ -178,19 +203,23 @@ Here's a detailed explanation:
   }
 }
 ```
+
 ##### Condition
+
 ```json
 [
   { "path": [ "properties", {} ], "operation": "has-key", "value": "required" }
 ]
 ```
 
-Property Count Check:
+#### Property Count Check
 
 `min-properties`: Checks if the object has a minimum number of properties.
- - **Value**: Must be a positive integer.
+
+- **Value**: Must be a positive integer.
 
 ##### Schema
+
 ```json
 { 
   "$schema": "https://json-schema.org/draft-07/schema",
@@ -201,49 +230,61 @@ Property Count Check:
   }
 }
 ```
+
 ##### Condition
+
 ```json
 [
   { "path": [ "items" ], "operation": "min-properties", "value": 2 }
 ]
 ```
-<hr>
+
+***
 
 ### Numeric Operations
 
 #### Numeric Bound Check
 
 `maximum`: Checks if the numeric target is less than or equal to the specified value.
- - **Value**: Must be a number.
+
+- **Value**: Must be a number.
 
 ##### Schema
+
 ```json
 {
   "$schema": "https://json-schema.org/draft-03/schema",
   "divisibleBy": -1
 }
 ```
+
 ##### Condition
+
 ```json
 [
   { "path": [ "divisibleBy" ], "operation": "maximum", "value": -1 }
 ]
 ```
-<hr>
+
+***
 
 ### String Operations
 
 `match-pattern`: Checks if the string target matches the specified regex pattern.
- - **Value**: Must be a regular expression as per ECMA 262.
+
+- **Value**: Must be a regular expression as per ECMA 262.
 
 ##### Schema
+
 ```json
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$anchor": "te:st"
 }
 ```
+
 ##### Condition
+
 ```json
 [
   { "path": [ "$anchor" ], "operation": "math-pattern", "value": ".*:.*" }
