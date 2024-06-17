@@ -1,0 +1,9 @@
+{
+    "vocabulary": "https://json-schema.org/draft/2019-09/vocab/applicator",
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "$dynamicAnchor" }
+    ],
+    "transform": [
+        { "operation": "prefix-until-unique", "path": [ "$dynamicAnchor" ], "value": "x-" } 
+    ]
+}
