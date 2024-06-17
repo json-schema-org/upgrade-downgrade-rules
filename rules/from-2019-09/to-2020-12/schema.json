@@ -1,0 +1,10 @@
+{
+    "vocabulary": "https://json-schema.org/draft/2019-09/vocab/core",
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "$schema" },
+        { "operation": "equals", "path": [ "$schema" ], "value": "https://json-schema.org/draft/2019-09/schema" } 
+    ],
+    "transform": [
+        { "operation": "replace", "path": [ "$schema" ], "value": "https://json-schema.org/draft/2020-12/schema" } 
+    ]
+}
