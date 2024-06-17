@@ -221,7 +221,7 @@ Here's a detailed explanation:
 ```json
 {
   "$schema": "https://json-schema.org/draft-03/schema",
-  "divisibelBy": 3
+  "divisibleBy": 3
 }
 ```
 
@@ -229,7 +229,7 @@ Here's a detailed explanation:
 
 ```json
 [
-  { "path": [ ], "operation": "not-has-key", "value": "multipleOf" }
+  { "path": [], "operation": "not-has-key", "value": "multipleOf" }
 ]
 ```
 
