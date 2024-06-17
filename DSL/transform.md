@@ -1,6 +1,6 @@
 # Transformation DSL
 
-This DSL (Domain-Specific Language) is inspired by JSON Patch and follows RFC 6901 for JSON Pointer representation in the path. It consists of an array of objects, each having the following keys:
+The Transformation DSL is a concise language inspired by JSON Patch for specifying schema modifications using operations. It consists of an array of objects, each having the following keys:
 
 ## Tranform fields
 
@@ -14,7 +14,7 @@ This DSL (Domain-Specific Language) is inspired by JSON Patch and follows RFC 69
 
 ## Operations
 
-### 1. `append-property`
+### `append-property`
 
 Appends property in the provided `from` path to the `to` path. The `to` path should be an array, or it will be created as an empty array before appending.
 
@@ -29,7 +29,8 @@ Appends property in the provided `from` path to the `to` path. The `to` path sho
         "foo": {
             "required": true
         }
-    }
+    },
+    "required": []
 }
 ```
 
@@ -37,8 +38,7 @@ Appends property in the provided `from` path to the `to` path. The `to` path sho
 
 ```json
 [
-    { "operation": "append-property", "to": [ "required" ], "from": [ "properties", {} ] }
-
+    { "operation": "append-property", "to": [ "required" ], "from": [ "properties", "foo" ] }
 ]
 ```
 
@@ -56,7 +56,7 @@ Appends property in the provided `from` path to the `to` path. The `to` path sho
 }
 ```
 
-### 2. `prefix-until-unique`
+### `prefix-until-unique`
 
 Prefixes matching keyword or keywords in the path with the provided value until it is unique.
 
@@ -94,7 +94,7 @@ Prefixes matching keyword or keywords in the path with the provided value until 
 }
 ```
 
-### 3. `replace`
+### `replace`
 
 Replaces the existing value at the given path with the new value.
 
@@ -124,7 +124,7 @@ Replaces the existing value at the given path with the new value.
 }
 ```
 
-### 4. `replace-with-absolute`
+### `replace-with-absolute`
 
 Replaces the value at the given path with an absolute value.
 
@@ -156,7 +156,7 @@ Replaces the value at the given path with an absolute value.
 }
 ```
 
-### 5. `remove`
+### `remove`
 
 Removes the key and its respective value at the given path.
 
@@ -187,7 +187,7 @@ Removes the key and its respective value at the given path.
 }
 ```
 
-### 6. `remove-substring`
+### `remove-substring`
 
 Removes all occurrences of a given substring in the string at the specified path.
 
@@ -219,7 +219,7 @@ Removes all occurrences of a given substring in the string at the specified path
 }
 ```
 
-### 7. `remove-and-append`
+### `remove-and-append`
 
 Removes the value from the `from` path and appends it to the `to` path. The `to` path should be an array, or it will be created as an empty array before appending.
 
@@ -251,7 +251,7 @@ Removes the value from the `from` path and appends it to the `to` path. The `to`
 }
 ```
 
-### 8. `move`
+### `move`
 
 Moves the value from the `from` path to the `to` path. The `to` can be an array or object.
 
@@ -283,7 +283,7 @@ Moves the value from the `from` path to the `to` path. The `to` can be an array 
 }
 ```
 
-### 9. `add`
+### `add`
 
 Adds a new value at the specified path. If the path already exists, it behaves like `replace`. You can add to an array at the last index by specifying `-1`.
 
@@ -323,7 +323,7 @@ Adds a new value at the specified path. If the path already exists, it behaves l
 }
 ```
 
-### 10. `copy`
+### `copy`
 
 Copies the value from the `from` path to the `to` path. If there is an existing value at the `to` path, it will be replaced; otherwise, a new value will be created.
 
