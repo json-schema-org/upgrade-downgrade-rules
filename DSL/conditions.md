@@ -212,6 +212,27 @@ Here's a detailed explanation:
 ]
 ```
 
+`not-has-key`: Checks if the specified key is absent in the target object.
+
+- **Value**: Must be a string.
+
+##### Schema
+
+```json
+{
+  "$schema": "https://json-schema.org/draft-03/schema",
+  "divisibleBy": 3
+}
+```
+
+##### Condition
+
+```json
+[
+  { "path": [], "operation": "not-has-key", "value": "multipleOf" }
+]
+```
+
 #### Property Count Check
 
 `min-properties`: Checks if the object has a minimum number of properties.
