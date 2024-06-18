@@ -1,0 +1,17 @@
+{
+    "vocabulary": [
+        "https://json-schema.org/draft/2019-09/vocab/applicator",
+        "https://json-schema.org/draft/2019-09/vocab/validation"
+    ],
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "contains" },
+        { "operation": "has-key", "path": [], "value": "maxContains" },
+        { "operation": "not-has-key", "path": [], "value": "minContains" },
+        { "operation": "has-key", "path": [], "value": "allOf" }
+    ],
+    "transform": [
+        { "operation": "add", "path": [ "allOf" , "-"], "value": { "not": { "not": { "contains": "temp" } } } },
+        { "operation": "move", "to": [ "allOf" , "-", "not", "not", "contains" ], "from": [ "contains" ] },
+        { "operation": "move", "to": [ "allOf" , "-", "not", "not", "maxContains" ], "from": [ "maxContains" ] }
+    ]
+}
