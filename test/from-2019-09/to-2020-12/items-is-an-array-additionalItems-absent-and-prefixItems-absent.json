@@ -1,0 +1,20 @@
+[
+    {
+        "title": "`items` is an array",
+        "from": {
+            "items": [ { "type": "string" } ]
+        },
+        "to": {
+            "prefixItems": [ { "type": "string" } ]
+        }
+    },
+    {
+        "title": "`items` is not an array",
+        "from": {
+            "items": true
+        },
+        "to": {
+            "items": true
+        }
+    }
+]

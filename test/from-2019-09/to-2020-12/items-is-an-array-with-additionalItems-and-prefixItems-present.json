@@ -1,0 +1,43 @@
+[
+    {
+        "title": "`items` is an array, prefixItems and additionalItems are present",
+        "from": {
+            "items": [ { "type": "string" } ],
+            "prefixItems": "dummy",
+            "additionalItems": false
+        },
+        "to": {
+            "prefiItems": [ { "type": "string" } ],
+            "x-prefixItems": "dummy",
+            "additionalItems": false
+        }
+    },
+    {
+        "title": "`items` is an array, prefixItems, x-prefixItems and additionalItems are present",
+        "from": {
+            "items": [ { "type": "string" } ],
+            "x-prefixItems": "dummy1",
+            "prefixItems": "dummy2",
+            "additionalItems": false
+        },
+        "to": {
+            "prefixItems": [ { "type": "string" } ],
+            "x-prefixItems": "dummy1",
+            "x-x-prefixItems": "dummy2",
+            "items": false
+        }
+    },
+    {
+        "title": "`items` is not an array, prefixItems and additionalItems are present",
+        "from": {
+            "items": true,
+            "prefixItems": "dummy2",
+            "additionalItems": false
+        },
+        "to": {
+            "items": true,
+            "prefixItems": "dummy1",
+            "additionalItems": false
+        }
+    }
+]

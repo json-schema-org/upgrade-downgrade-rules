@@ -1,0 +1,13 @@
+{
+    "vocabulary": "https://json-schema.org/draft/2019-09/vocab/applicator",
+    "condition": [ 
+        { "operation": "not-has-key", "path": [], "value": "prefixItems" },
+        { "operation": "has-key", "path": [], "value": "items" },
+        { "operation": "has-key", "path": [], "value": "additionalItems" },
+        { "operation": "type-is", "path": [ "items" ], "value": "array" }
+    ],
+    "transform": [
+        { "operation": "move", "to": [ "prefixItems" ], "from": [ "items" ] },
+        { "operation": "move", "to": [ "items" ], "from": [ "additionalItems" ] }
+    ]
+}
