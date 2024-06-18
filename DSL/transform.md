@@ -69,7 +69,7 @@ Prefixes matching keyword or keywords in the path with the provided value until 
     "$schema": "https://json-schema.org/draft-07/schema",
     "if": {},
     "x-if": {},
-    "x-x-if" :{},
+    "x-x-if": {},
     "$ref": "#foo"
 }
 ```
