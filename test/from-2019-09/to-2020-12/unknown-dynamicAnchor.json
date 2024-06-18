@@ -18,7 +18,7 @@
         "to": {
             "x-$dynamicAnchor": "expert",
             "x-x-$dynamicAnchor": "master",
-            "x-x-x$dynamicAnchor": "newbie"
+            "x-x-x-$dynamicAnchor": "newbie"
         }
     }
 ]

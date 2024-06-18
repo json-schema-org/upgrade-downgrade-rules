@@ -18,7 +18,7 @@
         "to": {
             "x-prefixItems": "expert",
             "x-x-prefixItems": "master",
-            "x-x-xprefixItems": "newbie"
+            "x-x-x-prefixItems": "newbie"
         }
     }
 ]

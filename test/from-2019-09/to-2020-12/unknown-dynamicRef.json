@@ -18,7 +18,7 @@
         "to": {
             "x-$dynamicRef": "expert",
             "x-x-$dynamicRef": "master",
-            "x-x-$xdynamicRef": "newbie"
+            "x-x-x-$dynamicRef": "newbie"
         }
     }
 ]
