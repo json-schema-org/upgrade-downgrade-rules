@@ -1,0 +1,11 @@
+{
+    "vocabulary": "https://json-schema.org/draft/2019-09/vocab/core",
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "$recursiveRef" },
+        { "operation": "not-has-key", "path": [], "value": "$dynamicRef" }
+    ],
+    "transform": [
+        { "operation": "move", "to": [ "$dynamicRef" ], "from": [ "$recursiveRef" ] },
+        { "operation": "replace", "path": [ "$dynamicRef" ], "value": "#dynamic" }
+    ]
+}

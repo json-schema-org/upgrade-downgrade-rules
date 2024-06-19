@@ -1,0 +1,26 @@
+[
+    {
+        "title": "$recursiveRef with value # and $dynamicRef is present",
+        "from": {
+            "$recursiveRef": "#",
+            "$dynamicRef": "dummy"
+        },
+        "to": {
+            "$dynamicRef": "#dynamic",
+            "x-$dynamicRef": "dummy"
+        }
+    },
+    {
+        "title": "$recursiveRef with value # and $dynamicRef is present also x-$dyanamicAnchor is present",
+        "from": {
+            "$recursiveRef": "#",
+            "$dynamicRef": "dummy1",
+            "x-$dynamicRef": "dummy2"
+        },
+        "to": {
+            "$dynamicRef": "#dynamic",
+            "x-$dynamicRef": "dummy2",
+            "x-x-$dynamicRef": "dummy1"
+        }
+    }
+]
