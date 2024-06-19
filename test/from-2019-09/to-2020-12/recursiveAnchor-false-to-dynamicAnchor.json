@@ -1,0 +1,9 @@
+[
+    {
+        "title": "$recursiveAnchor has the value false",
+        "from": {
+            "$recursiveAnchor": false
+        },
+        "to": {}
+    }
+]
