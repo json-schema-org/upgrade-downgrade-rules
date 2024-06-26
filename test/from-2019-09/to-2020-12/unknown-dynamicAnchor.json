@@ -1,0 +1,24 @@
+[
+    {
+        "title": "$dynamicAnchor present in the schema",
+        "from": {
+            "$dynamicAnchor": "newbie"
+        },
+        "to": {
+            "x-$dynamicAnchor": "newbie"            
+        }
+    },
+    {
+        "title": "$dynamicAnchor with $dynamicAnchor having `x-` as prefix",
+        "from": {
+            "x-$dynamicAnchor": "expert",
+            "x-x-$dynamicAnchor": "master",
+            "$dynamicAnchor": "newbie"
+        },
+        "to": {
+            "x-$dynamicAnchor": "expert",
+            "x-x-$dynamicAnchor": "master",
+            "x-x-x-$dynamicAnchor": "newbie"
+        }
+    }
+]

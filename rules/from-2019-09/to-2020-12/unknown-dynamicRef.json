@@ -1,0 +1,9 @@
+{
+    "vocabulary": "https://json-schema.org/draft/2019-09/vocab/core",
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "$dynamicRef" }
+    ],
+    "transform": [
+        { "operation": "prefix-until-unique", "path": [ "$dynamicRef" ], "value": "x-" } 
+    ]
+}
