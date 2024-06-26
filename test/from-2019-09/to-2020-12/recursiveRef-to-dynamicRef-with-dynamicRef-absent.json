@@ -1,0 +1,11 @@
+[
+    {
+        "title": "$recursiveRef with value #",
+        "from": {
+            "$recursiveRef": "#"
+        },
+        "to": {
+            "$dynamicRef": "#dynamic"
+        }
+    }
+]
