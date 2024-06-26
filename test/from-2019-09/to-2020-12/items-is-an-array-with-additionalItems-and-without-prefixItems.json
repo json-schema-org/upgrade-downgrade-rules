@@ -1,0 +1,24 @@
+[
+    {
+        "title": "`items` is an array, additionalItems is present",
+        "from": {
+            "items": [ { "type": "string" } ],
+            "additionalItems": false
+        },
+        "to": {
+            "prefixItems": [ { "type": "string" } ],
+            "items": false
+        }
+    },
+    {
+        "title": "`items` is not an array, additionalItems is present",
+        "from": {
+            "items": true,
+            "additionalItems": false
+        },
+        "to": {
+            "items": true,
+            "additionalItems": false
+        }
+    }
+]

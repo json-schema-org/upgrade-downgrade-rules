@@ -1,0 +1,22 @@
+[
+    {
+        "title": "`items` is an array, prefixItems is already present",
+        "from": {
+            "items": [ { "type": "string" } ],
+            "prefixItems": "dummy"
+        },
+        "to": {
+            "x-prefixItems": "dummy",
+            "prefixItems": [ { "type": "string" } ]
+        }
+    },
+    {
+        "title": "`items` is not an array",
+        "from": {
+            "items": true
+        },
+        "to": {
+            "items": true
+        }
+    }
+]
