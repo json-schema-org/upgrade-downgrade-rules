@@ -1,0 +1,10 @@
+{
+    "vocabulary": "https://json-schema.org/draft/2019-09/vocab/core",
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "$recursiveAnchor" },
+        { "operation": "equals", "path": [ "$recursiveAnchor" ], "value": false }
+    ],
+    "transform": [
+        { "operation": "remove", "path": [ "$recursiveAnchor" ] }
+    ]
+}

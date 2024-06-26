@@ -1,0 +1,26 @@
+[
+    {
+        "title": "$recursiveAnchor with value true and $dynamicAnchor is present",
+        "from": {
+            "$recursiveAnchor": true,
+            "$dynamicAnchor": "dummy"
+        },
+        "to": {
+            "$dynamicAnchor": "dynamic",
+            "x-$dynamicAnchor": "dummy"
+        }
+    },
+    {
+        "title": "$recursiveAnchor with value true and $dynamicAnchor is present also x-$dyanamicAnchor is present",
+        "from": {
+            "$recursiveAnchor": true,
+            "$dynamicAnchor": "dummy1",
+            "x-$dynamicAnchor": "dummy2"
+        },
+        "to": {
+            "$dynamicAnchor": "dynamic",
+            "x-$dynamicAnchor": "dummy2",
+            "x-x-$dynamicAnchor": "dummy1"
+        }
+    }
+]

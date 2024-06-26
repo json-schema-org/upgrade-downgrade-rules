@@ -1,0 +1,12 @@
+{
+    "vocabulary": "https://json-schema.org/draft/2019-09/vocab/core",
+    "condition": [ 
+        { "operation": "not-has-key", "path": [], "value": "$dynamicAnchor" },
+        { "operation": "has-key", "path": [], "value": "$recursiveAnchor" },
+        { "operation": "equals", "path": [ "$recursiveAnchor" ], "value": true }
+    ],
+    "transform": [
+        { "operation": "move", "to": [ "$dynamicAnchor" ], "from": [ "$recursiveAnchor" ] },
+        { "operation": "replace", "path": [ "$dynamicAnchor" ], "value": "dynamic" }
+    ]
+}

@@ -1,0 +1,11 @@
+[
+    {
+        "title": "$recursiveAnchor with value true",
+        "from": {
+            "$recursiveAnchor": true
+        },
+        "to": {
+            "$dynamicAnchor": "dynamic"
+        }
+    }
+]
