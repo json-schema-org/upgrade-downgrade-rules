@@ -1,0 +1,25 @@
+[
+    {
+        "title": "`contains` keyword having schema with and minContains without maxContains, allOf is present",
+        "from": {
+            "contains": { "type": "string" },
+            "minContains": 2,
+            "unevaluatedItems": false,
+            "allOf": [ {} ]
+        },
+        "to": {
+            "allOf": [
+                {},
+                {
+                    "not": {
+                        "not": {
+                            "contains": { "type": "string" },
+                            "minContains": 2
+                        }
+                    }
+                }
+            ],
+            "unevaluatedItems": false
+        }
+    }
+]
