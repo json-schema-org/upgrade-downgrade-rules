@@ -1,0 +1,9 @@
+{
+    "vocabulary": "vocabulary",
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "dependentSchemas" }
+    ],
+    "transform": [
+        { "operation": "prefix-until-unique", "path": [ "dependentSchemas" ], "value": "x-" } 
+    ]
+}

@@ -1,0 +1,24 @@
+[
+    {
+        "title": "deprecated present in the schema",
+        "from": {
+            "deprecated": "newbie"
+        },
+        "to": {
+            "x-deprecated": "newbie"            
+        }
+    },
+    {
+        "title": "deprecated with deprecated having `x-` as prefix",
+        "from": {
+            "x-deprecated": "expert",
+            "x-x-deprecated": "master",
+            "deprecated": "newbie"
+        },
+        "to": {
+            "x-deprecated": "expert",
+            "x-x-deprecated": "master",
+            "x-x-x-deprecated": "newbie"
+        }
+    }
+]

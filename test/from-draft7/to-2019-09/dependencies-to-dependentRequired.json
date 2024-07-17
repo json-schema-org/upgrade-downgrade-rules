@@ -1,0 +1,32 @@
+[
+    {
+        "title": "`dependencies` has properties whose subschema has type array",
+        "from": {
+            "dependencies": {
+                "foo": [ "bar", "baz" ]
+            }
+        },
+        "to": {
+            "dependentRequired": {
+                "foo": [ "bar", "baz" ]
+            }
+        }
+    },
+    {
+        "title": "`dependencies` has properties whose subschema does not have type array",
+        "from": {
+            "dependencies": {
+                "foo": {
+                    "minProperties": 2
+                }
+            }
+        },
+        "to": {
+            "dependencies": {
+                "foo": {
+                    "minProperties": 2
+                }
+            }
+        }
+    }
+]

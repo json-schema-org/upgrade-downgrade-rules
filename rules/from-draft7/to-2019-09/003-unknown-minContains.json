@@ -1,0 +1,9 @@
+{
+    "vocabulary": "vocabulary",
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "minContains" }
+    ],
+    "transform": [
+        { "operation": "prefix-until-unique", "path": [ "minContains" ], "value": "x-" } 
+    ]
+}

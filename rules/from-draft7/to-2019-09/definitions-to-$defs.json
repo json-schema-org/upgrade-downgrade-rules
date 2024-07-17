@@ -1,0 +1,9 @@
+{
+    "vocabulary": "core",
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "definitions" }
+    ],
+    "transform": [
+        { "operation": "move", "to": [ "$defs" ], "from": [ "definitions" ] } 
+    ]
+}
