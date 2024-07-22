@@ -1,0 +1,24 @@
+[
+    {
+        "title": "$dynamicRef present in the schema",
+        "from": {
+            "$dynamicRef": "newbie"
+        },
+        "to": {
+            "x-$dynamicRef": "newbie"            
+        }
+    },
+    {
+        "title": "$dynamicRef with $dynamicRef having `x-` as prefix",
+        "from": {
+            "x-$dynamicRef": "expert",
+            "x-x-$dynamicRef": "master",
+            "$dynamicRef": "newbie"
+        },
+        "to": {
+            "x-$dynamicRef": "expert",
+            "x-x-$dynamicRef": "master",
+            "x-x-x-$dynamicRef": "newbie"
+        }
+    }
+]
