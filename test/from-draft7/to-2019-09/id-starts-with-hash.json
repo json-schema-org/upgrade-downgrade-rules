@@ -1,0 +1,29 @@
+[
+    {
+        "title": "Value of $id property starts with hash",
+        "from": {
+            "$id": "#foo"
+        },
+        "to": {
+            "$anchor": "foo"
+        }
+    },
+    {
+        "title": "Value of $id is not a plain name identifier",
+        "from": {
+            "$id": "#/contains"
+        },
+        "to": {
+            "$id": "#/contains"
+        }
+    },
+    {
+        "title": "Value of $id property is a URI reference",
+        "from": {
+            "$id": "http://example.com/foo#"
+        },
+        "to": {
+            "$id": "http://example.com/foo#"
+        }
+    }
+]

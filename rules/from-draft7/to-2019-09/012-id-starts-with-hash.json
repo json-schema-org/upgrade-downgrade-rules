@@ -1,0 +1,11 @@
+{
+    "vocabulary": "core",
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "$id" },
+        { "operation": "match-pattern", "path": [ "$id" ], "value": "^#(?!/).*" }
+    ],
+    "transform": [
+        { "operation": "move", "to": [ "$anchor" ], "from": [ "$id" ] },
+        { "operation": "remove-substring", "path": [ "$anchor" ], "value": "#" }
+    ]
+}

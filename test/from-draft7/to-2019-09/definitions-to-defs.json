@@ -1,0 +1,19 @@
+[
+    {
+        "title": "Schema has the keyword `definitions`",
+        "from": {
+            "definitions": {
+                "foo": {
+                    "type": "string"
+                }
+            }
+        },
+        "to": {
+            "$defs": {
+                "foo": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+]
