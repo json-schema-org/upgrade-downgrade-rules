@@ -1,0 +1,32 @@
+[
+    {
+        "title": "`dependencies` has properties whose subschema has type object",
+        "from": {
+            "dependencies": {
+                "foo": {
+                    "minProperties": 2
+                }
+            }
+        },
+        "to": {
+            "dependentSchemas": {
+                "foo": {
+                    "minProperties": 2
+                }
+            }
+        }
+    },
+    {
+        "title": "`dependencies` has properties whose subschema does not have type object",
+        "from": {
+            "dependencies": {
+                "foo": [ "bar", "baz" ]
+            }
+        },
+        "to": {
+            "dependencies": {
+                "foo": [ "bar", "baz" ]
+            }
+        }
+    }
+]
