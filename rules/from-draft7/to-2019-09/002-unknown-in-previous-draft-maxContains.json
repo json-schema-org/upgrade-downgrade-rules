@@ -1,0 +1,9 @@
+{
+    "vocabulary": "meta-schema",
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "maxContains" }
+    ],
+    "transform": [
+        { "operation": "prefix-until-unique", "path": [ "maxContains" ], "value": "x-" } 
+    ]
+}

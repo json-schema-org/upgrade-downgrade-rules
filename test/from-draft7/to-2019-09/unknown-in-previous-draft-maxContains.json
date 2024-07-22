@@ -1,0 +1,24 @@
+[
+    {
+        "title": "maxContains present in the schema",
+        "from": {
+            "maxContains": "newbie"
+        },
+        "to": {
+            "x-maxContains": "newbie"            
+        }
+    },
+    {
+        "title": "maxContains with maxContains having `x-` as prefix",
+        "from": {
+            "x-maxContains": "expert",
+            "x-x-maxContains": "master",
+            "maxContains": "newbie"
+        },
+        "to": {
+            "x-maxContains": "expert",
+            "x-x-maxContains": "master",
+            "x-x-x-maxContains": "newbie"
+        }
+    }
+]

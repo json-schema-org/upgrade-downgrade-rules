@@ -1,0 +1,24 @@
+[
+    {
+        "title": "$vocabulary present in the schema",
+        "from": {
+            "$vocabulary": "newbie"
+        },
+        "to": {
+            "x-$vocabulary": "newbie"            
+        }
+    },
+    {
+        "title": "$vocabulary with $vocabulary having `x-` as prefix",
+        "from": {
+            "x-$vocabulary": "expert",
+            "x-x-$vocabulary": "master",
+            "$vocabulary": "newbie"
+        },
+        "to": {
+            "x-$vocabulary": "expert",
+            "x-x-$vocabulary": "master",
+            "x-x-x-$vocabulary": "newbie"
+        }
+    }
+]

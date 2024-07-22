@@ -1,0 +1,24 @@
+[
+    {
+        "title": "$anchor present in the schema",
+        "from": {
+            "$anchor": "newbie"
+        },
+        "to": {
+            "x-$anchor": "newbie"            
+        }
+    },
+    {
+        "title": "$anchor with $anchor having `x-` as prefix",
+        "from": {
+            "x-$anchor": "expert",
+            "x-x-$anchor": "master",
+            "$anchor": "newbie"
+        },
+        "to": {
+            "x-$anchor": "expert",
+            "x-x-$anchor": "master",
+            "x-x-x-$anchor": "newbie"
+        }
+    }
+]

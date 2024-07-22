@@ -1,0 +1,24 @@
+[
+    {
+        "title": "$recursiveAnchor present in the schema",
+        "from": {
+            "$recursiveAnchor": "newbie"
+        },
+        "to": {
+            "x-$recursiveAnchor": "newbie"            
+        }
+    },
+    {
+        "title": "$recursiveAnchor with $recursiveAnchor having `x-` as prefix",
+        "from": {
+            "x-$recursiveAnchor": "expert",
+            "x-x-$recursiveAnchor": "master",
+            "$recursiveAnchor": "newbie"
+        },
+        "to": {
+            "x-$recursiveAnchor": "expert",
+            "x-x-$recursiveAnchor": "master",
+            "x-x-x-$recursiveAnchor": "newbie"
+        }
+    }
+]

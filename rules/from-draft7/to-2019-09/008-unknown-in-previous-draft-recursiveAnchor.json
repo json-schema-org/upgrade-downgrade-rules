@@ -1,0 +1,9 @@
+{
+    "vocabulary": "core",
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "$recursiveAnchor" }
+    ],
+    "transform": [
+        { "operation": "prefix-until-unique", "path": [ "$recursiveAnchor" ], "value": "x-" } 
+    ]
+}
