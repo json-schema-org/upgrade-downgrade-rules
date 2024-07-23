@@ -1,0 +1,9 @@
+{
+    "vocabulary": "core",
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "anyOf" }
+    ],
+    "transform": [
+        { "operation": "prefix-until-unique", "path": [ "anyOf" ], "value": "x-" } 
+    ]
+}

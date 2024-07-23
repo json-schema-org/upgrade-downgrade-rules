@@ -1,0 +1,24 @@
+[
+    {
+        "title": "multipleOf present in the schema",
+        "from": {
+            "multipleOf": "newbie"
+        },
+        "to": {
+            "x-multipleOf": "newbie"            
+        }
+    },
+    {
+        "title": "multipleOf with multipleOf having `x-` as prefix",
+        "from": {
+            "x-multipleOf": "expert",
+            "x-x-multipleOf": "master",
+            "multipleOf": "newbie"
+        },
+        "to": {
+            "x-multipleOf": "expert",
+            "x-x-multipleOf": "master",
+            "x-x-x-multipleOf": "newbie"
+        }
+    }
+]
