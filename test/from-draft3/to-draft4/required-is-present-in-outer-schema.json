@@ -1,0 +1,17 @@
+[
+    {
+        "title": "`required` is present in outer schema",
+        "from": {
+            "properties": {
+                "foo": {}
+            },
+            "required": false
+        },
+        "to": {
+            "properties": {
+                "foo": {}
+            },
+            "required": []
+        }
+    }
+]

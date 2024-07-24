@@ -1,0 +1,15 @@
+[
+    {
+        "title": "`required` has value false present in properties children",
+        "from": {
+            "properties": {
+                "foo": { "required": false }
+            }
+        },
+        "to": {
+            "properties": {
+                "foo": {}
+            }
+        }
+    }
+]
