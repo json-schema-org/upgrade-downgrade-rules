@@ -1,0 +1,11 @@
+{
+    "vocabulary": "core",
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "type" },
+        { "operation": "type-is", "path": [ "type" ], "value": "array" },
+        { "operation": "equals", "path": [ "type", {} ], "value": "any" } 
+    ],
+    "transform": [
+        { "operation": "remove", "path": [ "type" ] } 
+    ]
+}

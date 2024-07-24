@@ -1,0 +1,17 @@
+[
+    {
+        "title": "`type` is present and contains objects in it",
+        "from": {
+            "type": [ {}, { "type": "string" } ],
+            "anyOf": [ { "type": [ "string", "object" ] } ]
+        },
+        "to": {
+            "type": [],
+            "anyOf": [
+                { "type": [ "string", "object" ] },
+                { "type": "string" },
+                {}
+            ]
+        }
+    }
+]

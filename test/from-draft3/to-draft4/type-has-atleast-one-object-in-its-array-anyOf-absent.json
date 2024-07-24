@@ -1,0 +1,12 @@
+[
+    {
+        "title": "`type` is present and contains atleast one object in it",
+        "from": {
+            "type": [ "string", { "type": "string" } ]
+        },
+        "to": {
+            "type": [ "string", { "type": "string" } ],
+            "anyOf": []
+        }
+    }
+]

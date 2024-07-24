@@ -1,0 +1,12 @@
+{
+    "vocabulary": "core",
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "type" },
+        { "operation": "not-has-key", "path": [], "value": "anyOf" },
+        { "operation": "type-is", "path": [ "type" ], "value": "array" },
+        { "operation": "contains-type", "path": [ "type" ], "value": "object" }
+    ],
+    "transform": [
+        { "operation": "add", "path": [ "anyOf" ], "value": [] }
+    ]
+}
