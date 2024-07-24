@@ -1,0 +1,73 @@
+[
+    {
+        "title": "Simple matching schema",
+        "from": {
+            "$schema": "https://json-schema.org/draft-03/schema"
+        },
+        "to": {
+            "$schema": "https://json-schema.org/draft-04/schema"
+        }
+    },
+    {
+        "title": "Simple non matching schema",
+        "from": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema"
+        },
+        "to": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema"
+        }
+    },
+    {
+        "title": "Nested matching schema",
+        "from": {
+            "$schema": "https://json-schema.org/draft-03/schema",
+            "$defs": {
+                "foo": {
+                    "$schema": "https://json-schema.org/draft-03/schema"
+                }
+            }
+        },
+        "to": {
+            "$schema": "https://json-schema.org/draft-04/schema",
+            "$defs": {
+                "foo": {
+                    "$schema": "https://json-schema.org/draft-04/schema"
+                }
+            }
+        }
+    },
+    {
+        "title": "Nested half matching schema",
+        "from": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "$defs": {
+                "foo": {
+                    "$schema": "https://json-schema.org/draft-03/schema"
+                }
+            }
+        },
+        "to": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "$defs": {
+                "foo": {
+                    "$schema": "https://json-schema.org/draft-04/schema"
+                }
+            }
+        }
+    },
+    {
+        "title": "$schema inside unknown keyword",
+        "from": {
+            "$schema": "https://json-schema.org/draft-03/schema",
+            "foo": {
+                "$schema": "https://json-schema.org/draft-03/schema"
+            }
+        },
+        "to": {
+            "$schema": "https://json-schema.org/draft-04/schema",
+            "foo": {
+                "$schema": "https://json-schema.org/draft-03/schema"
+            }
+        }
+    }
+]
