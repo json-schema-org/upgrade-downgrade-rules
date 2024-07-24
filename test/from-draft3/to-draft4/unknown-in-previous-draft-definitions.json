@@ -1,0 +1,24 @@
+[
+    {
+        "title": "definitions present in the schema",
+        "from": {
+            "definitions": "newbie"
+        },
+        "to": {
+            "x-definitions": "newbie"            
+        }
+    },
+    {
+        "title": "definitions with definitions having `x-` as prefix",
+        "from": {
+            "x-definitions": "expert",
+            "x-x-definitions": "master",
+            "definitions": "newbie"
+        },
+        "to": {
+            "x-definitions": "expert",
+            "x-x-definitions": "master",
+            "x-x-x-definitions": "newbie"
+        }
+    }
+]
