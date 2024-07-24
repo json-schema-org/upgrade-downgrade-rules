@@ -1,0 +1,11 @@
+[
+    {
+        "title": "`divisibleBy` is present with value greater than equal to 0",
+        "from": {
+            "divisibleBy": 1
+        },
+        "to": {
+            "multipleOf": 1
+        }
+    }
+]

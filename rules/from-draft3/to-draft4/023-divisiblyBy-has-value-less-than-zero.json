@@ -1,0 +1,10 @@
+{
+    "vocabulary": "core",
+    "condition": [
+        { "operation": "has-key", "path": [], "value": "divisibleBy" },
+        { "operation": "maximum", "path": [ "divisibleBy" ], "value": -1 }
+    ],
+    "transform": [
+        { "operation": "replace-with-absolute", "path": [ "divisibleBy" ] } 
+    ]
+}
