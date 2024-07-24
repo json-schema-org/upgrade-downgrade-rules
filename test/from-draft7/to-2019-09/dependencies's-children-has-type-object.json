@@ -1,0 +1,16 @@
+[
+    {
+        "title": "`dependencies` has properties whose subschema has a type object",
+        "from": {
+            "dependencies": {
+                "foo": { "type": "object" }
+            }
+        },
+        "to": {
+            "dependencies": {
+                "foo": { "type": "object" }
+            },
+            "dependentSchemas": {}
+        }
+    }
+]

@@ -5,6 +5,6 @@
         { "operation": "type-is", "path": [ "dependencies", {} ], "value": "array" }
     ],
     "transform": [
-        { "operation": "move", "to": [ "dependentRequired", {} ], "from": [ "dependencies", {} ] }
+        { "operation": "add", "path": [ "dependentRequired" ], "value": {} }
     ]
 }

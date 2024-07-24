@@ -1,0 +1,10 @@
+{
+    "vocabulary": "core",
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "dependencies" },
+        { "operation": "type-is", "path": [ "dependencies", {} ], "value": "object" }
+    ],
+    "transform": [
+        { "operation": "move", "to": [ "dependentSchemas", {} ], "from": [ "dependencies", {} ] }
+    ]
+}

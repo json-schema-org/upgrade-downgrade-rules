@@ -5,13 +5,21 @@
             "dependencies": {
                 "foo": {
                     "minProperties": 2
+                },
+                "bar": {
+                    "type": "string"
                 }
-            }
+            },
+            "dependentSchemas": {}
         },
         "to": {
+            "dependencies": {},
             "dependentSchemas": {
                 "foo": {
                     "minProperties": 2
+                },
+                "bar": {
+                    "type": "string"
                 }
             }
         }
@@ -21,12 +29,14 @@
         "from": {
             "dependencies": {
                 "foo": [ "bar", "baz" ]
-            }
+            },
+            "dependentSchemas": {}
         },
         "to": {
             "dependencies": {
                 "foo": [ "bar", "baz" ]
-            }
+            },
+            "dependentSchemas": {}
         }
     }
 ]

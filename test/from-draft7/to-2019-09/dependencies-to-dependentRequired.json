@@ -3,12 +3,16 @@
         "title": "`dependencies` has properties whose subschema has type array",
         "from": {
             "dependencies": {
-                "foo": [ "bar", "baz" ]
-            }
+                "foo": [ "bar", "baz" ],
+                "car": [ "wheel", "foo" ]
+            },
+            "dependentRequired": {}
         },
         "to": {
+            "dependencies": {},
             "dependentRequired": {
-                "foo": [ "bar", "baz" ]
+                "foo": [ "bar", "baz" ],
+                "car": [ "wheel", "foo" ]
             }
         }
     },
@@ -19,14 +23,16 @@
                 "foo": {
                     "minProperties": 2
                 }
-            }
+            },
+            "dependentRequired": {}
         },
         "to": {
             "dependencies": {
                 "foo": {
                     "minProperties": 2
                 }
-            }
+            },
+            "dependentRequired": {}
         }
     }
 ]
