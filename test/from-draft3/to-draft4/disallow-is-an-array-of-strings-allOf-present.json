@@ -1,0 +1,14 @@
+[
+    {
+        "title": "`disallow` is present and contains atleast one object and allOf present",
+        "from": {
+            "disallow": [ "number", "string" ],
+            "allOf": []
+        },
+        "to": {
+            "allOf": [
+                { "not": { "type": [ "number", "string" ] } }
+            ]
+        }
+    }
+]

@@ -1,0 +1,15 @@
+[
+    {
+        "title": "`disallow` is present and contains atleast one object and allOf present",
+        "from": {
+            "disallow": [ "any", {}, "string" ],
+            "allOf": []
+        },
+        "to": {
+            "disallow": [ "any", "string" ],
+            "allOf": [
+                { "not": {} }
+            ]
+        }
+    }
+]
