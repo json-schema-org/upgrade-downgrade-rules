@@ -1,0 +1,12 @@
+{
+    "vocabulary": "core",
+    "condition": [
+        { "operation": "has-key", "path": [], "value": "extends" },
+        { "operation": "type-is", "path": [ "extends" ], "value": "object" },
+        { "operation": "not-has-key", "path": [], "value": "allOf" }
+    ],
+    "transform": [
+        { "operation": "add", "path": [ "allOf" ], "value": [ "temp" ] },
+        { "operation": "move", "to": [ "allOf", "-" ], "from": [ "extends" ] }
+    ]
+}
