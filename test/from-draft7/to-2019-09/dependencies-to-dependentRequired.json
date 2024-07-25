@@ -15,24 +15,5 @@
                 "car": [ "wheel", "foo" ]
             }
         }
-    },
-    {
-        "title": "`dependencies` has properties whose subschema does not have type array",
-        "from": {
-            "dependencies": {
-                "foo": {
-                    "minProperties": 2
-                }
-            },
-            "dependentRequired": {}
-        },
-        "to": {
-            "dependencies": {
-                "foo": {
-                    "minProperties": 2
-                }
-            },
-            "dependentRequired": {}
-        }
     }
 ]

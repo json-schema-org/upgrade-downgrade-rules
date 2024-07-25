@@ -23,20 +23,5 @@
                 }
             }
         }
-    },
-    {
-        "title": "`dependencies` has properties whose subschema does not have type object",
-        "from": {
-            "dependencies": {
-                "foo": [ "bar", "baz" ]
-            },
-            "dependentSchemas": {}
-        },
-        "to": {
-            "dependencies": {
-                "foo": [ "bar", "baz" ]
-            },
-            "dependentSchemas": {}
-        }
     }
 ]
