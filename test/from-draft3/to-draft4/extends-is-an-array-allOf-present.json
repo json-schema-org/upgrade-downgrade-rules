@@ -1,6 +1,6 @@
 [
     {
-        "title": "Extends is an array, allOf is absent",
+        "title": "Extends is an array, allOf is present",
         "from": {
             "extends": [ {}, { "type": "string" } ],
             "allOf": []
