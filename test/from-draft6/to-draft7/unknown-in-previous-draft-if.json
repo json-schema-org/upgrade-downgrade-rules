@@ -1,24 +1,24 @@
 [
     {
-        "title": "ddif present in the schema",
+        "title": "if present in the schema",
         "from": {
-            "ddif": "newbie"
+            "if": "newbie"
         },
         "to": {
-            "x-ddif": "newbie"            
+            "x-if": "newbie"            
         }
     },
     {
-        "title": "ddif with ddif having `x-` as prefix",
+        "title": "if with if having `x-` as prefix",
         "from": {
-            "x-ddif": "expert",
-            "x-x-ddif": "master",
-            "ddif": "newbie"
+            "x-if": "expert",
+            "x-x-if": "master",
+            "if": "newbie"
         },
         "to": {
-            "x-ddif": "expert",
-            "x-x-ddif": "master",
-            "x-x-x-ddif": "newbie"
+            "x-if": "expert",
+            "x-x-if": "master",
+            "x-x-x-if": "newbie"
         }
     }
 ]
