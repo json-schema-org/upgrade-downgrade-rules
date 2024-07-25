@@ -1,0 +1,9 @@
+[
+    {
+        "title": "exclusiveMaximum present in the schema and value equals false",
+        "from": {
+            "exclusiveMaximum": false
+        },
+        "to": {}
+    }
+]

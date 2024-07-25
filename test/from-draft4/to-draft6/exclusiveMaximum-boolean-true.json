@@ -1,0 +1,13 @@
+[
+    {
+        "title": "exclusiveMaximum and maximum present in the schema and exclusiveMaximum equals true",
+        "from": {
+            "exclusiveMaximum": true,
+            "maximum": 3
+        },
+        "to": {
+            "exclusiveMaximum": 3,
+            "maximum": 3
+        }
+    }
+]
