@@ -1,0 +1,9 @@
+{
+    "vocabulary": "validation",
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "contentEncoding" }
+    ],
+    "transform": [
+        { "operation": "prefix-until-unique", "path": [ "contentEncoding" ], "value": "x-" } 
+    ]
+}

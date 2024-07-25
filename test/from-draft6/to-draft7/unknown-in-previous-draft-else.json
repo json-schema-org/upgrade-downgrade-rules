@@ -1,0 +1,24 @@
+[
+    {
+        "title": "else present in the schema",
+        "from": {
+            "else": "newbie"
+        },
+        "to": {
+            "x-else": "newbie"            
+        }
+    },
+    {
+        "title": "else with else having `x-` as prefix",
+        "from": {
+            "x-else": "expert",
+            "x-x-else": "master",
+            "else": "newbie"
+        },
+        "to": {
+            "x-else": "expert",
+            "x-x-else": "master",
+            "x-x-x-else": "newbie"
+        }
+    }
+]

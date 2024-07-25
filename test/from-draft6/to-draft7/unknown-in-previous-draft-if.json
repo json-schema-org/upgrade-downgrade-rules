@@ -1,0 +1,24 @@
+[
+    {
+        "title": "ddif present in the schema",
+        "from": {
+            "ddif": "newbie"
+        },
+        "to": {
+            "x-ddif": "newbie"            
+        }
+    },
+    {
+        "title": "ddif with ddif having `x-` as prefix",
+        "from": {
+            "x-ddif": "expert",
+            "x-x-ddif": "master",
+            "ddif": "newbie"
+        },
+        "to": {
+            "x-ddif": "expert",
+            "x-x-ddif": "master",
+            "x-x-x-ddif": "newbie"
+        }
+    }
+]

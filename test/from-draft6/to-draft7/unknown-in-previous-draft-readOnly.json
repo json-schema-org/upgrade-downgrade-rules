@@ -1,0 +1,24 @@
+[
+    {
+        "title": "readOnly present in the schema",
+        "from": {
+            "readOnly": "newbie"
+        },
+        "to": {
+            "x-readOnly": "newbie"            
+        }
+    },
+    {
+        "title": "readOnly with readOnly having `x-` as prefix",
+        "from": {
+            "x-readOnly": "expert",
+            "x-x-readOnly": "master",
+            "readOnly": "newbie"
+        },
+        "to": {
+            "x-readOnly": "expert",
+            "x-x-readOnly": "master",
+            "x-x-x-readOnly": "newbie"
+        }
+    }
+]
