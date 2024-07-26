@@ -1,0 +1,24 @@
+[
+    {
+        "title": "additionalItems present in the schema",
+        "from": {
+            "additionalItems": "newbie"
+        },
+        "to": {
+            "x-additionalItems": "newbie"            
+        }
+    },
+    {
+        "title": "additionalItems with additionalItems having `x-` as prefix",
+        "from": {
+            "x-additionalItems": "expert",
+            "x-x-additionalItems": "master",
+            "additionalItems": "newbie"
+        },
+        "to": {
+            "x-additionalItems": "expert",
+            "x-x-additionalItems": "master",
+            "x-x-x-additionalItems": "newbie"
+        }
+    }
+]

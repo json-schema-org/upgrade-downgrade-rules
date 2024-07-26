@@ -1,0 +1,24 @@
+[
+    {
+        "title": "exclusiveMaximum present in the schema",
+        "from": {
+            "exclusiveMaximum": "newbie"
+        },
+        "to": {
+            "x-exclusiveMaximum": "newbie"            
+        }
+    },
+    {
+        "title": "exclusiveMaximum with exclusiveMaximum having `x-` as prefix",
+        "from": {
+            "x-exclusiveMaximum": "expert",
+            "x-x-exclusiveMaximum": "master",
+            "exclusiveMaximum": "newbie"
+        },
+        "to": {
+            "x-exclusiveMaximum": "expert",
+            "x-x-exclusiveMaximum": "master",
+            "x-x-x-exclusiveMaximum": "newbie"
+        }
+    }
+]

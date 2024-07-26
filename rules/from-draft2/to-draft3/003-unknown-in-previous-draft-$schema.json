@@ -1,0 +1,9 @@
+{
+    "vocabulary": null,
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "$schema" }
+    ],
+    "transform": [
+        { "operation": "prefix-until-unique", "path": [ "$schema" ], "value": "x-" } 
+    ]
+}
