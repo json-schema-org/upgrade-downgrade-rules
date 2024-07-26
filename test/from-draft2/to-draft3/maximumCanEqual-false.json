@@ -1,0 +1,11 @@
+[
+    {
+        "title": "maximumCanEqual is false",
+        "from": {
+            "maximumCanEqual": false
+        },
+        "to": {
+            "exclusiveMaximum": true
+        }
+    }
+]

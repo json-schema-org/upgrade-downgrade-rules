@@ -1,0 +1,9 @@
+[
+    {
+        "title": "minimumCanEqual is true",
+        "from": {
+            "minimumCanEqual": true
+        },
+        "to": {}
+    }
+]
