@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Properties has children who have optional:true",
+        "from": {
+            "properties": {
+                "foo": {
+                    "optional": true
+                }
+            }
+        },
+        "to": {
+            "properties": {
+                "foo": {}
+            }
+        }
+    }
+]

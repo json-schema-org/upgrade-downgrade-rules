@@ -1,0 +1,21 @@
+[
+    {
+        "title": "Properties has children who have optional:false and required is already present",
+        "from": {
+            "properties": {
+                "foo": {
+                    "required": "string",
+                    "optional": false
+                }
+            }
+        },
+        "to": {
+            "properties": {
+                "foo": {
+                    "x-required": "string",
+                    "optional": false
+                }
+            }
+        }
+    }
+]
