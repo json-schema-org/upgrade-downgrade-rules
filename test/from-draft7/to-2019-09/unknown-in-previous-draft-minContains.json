@@ -1,0 +1,24 @@
+[
+    {
+        "title": "minContains present in the schema",
+        "from": {
+            "minContains": "newbie"
+        },
+        "to": {
+            "x-minContains": "newbie"            
+        }
+    },
+    {
+        "title": "minContains with minContains having `x-` as prefix",
+        "from": {
+            "x-minContains": "expert",
+            "x-x-minContains": "master",
+            "minContains": "newbie"
+        },
+        "to": {
+            "x-minContains": "expert",
+            "x-x-minContains": "master",
+            "x-x-x-minContains": "newbie"
+        }
+    }
+]

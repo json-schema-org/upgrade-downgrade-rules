@@ -1,0 +1,24 @@
+[
+    {
+        "title": "not present in the schema",
+        "from": {
+            "not": "newbie"
+        },
+        "to": {
+            "x-not": "newbie"            
+        }
+    },
+    {
+        "title": "not with not having `x-` as prefix",
+        "from": {
+            "x-not": "expert",
+            "x-x-not": "master",
+            "not": "newbie"
+        },
+        "to": {
+            "x-not": "expert",
+            "x-x-not": "master",
+            "x-x-x-not": "newbie"
+        }
+    }
+]

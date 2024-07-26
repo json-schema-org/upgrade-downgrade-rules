@@ -1,0 +1,24 @@
+[
+    {
+        "title": "anyOf present in the schema",
+        "from": {
+            "anyOf": "newbie"
+        },
+        "to": {
+            "x-anyOf": "newbie"            
+        }
+    },
+    {
+        "title": "anyOf with anyOf having `x-` as prefix",
+        "from": {
+            "x-anyOf": "expert",
+            "x-x-anyOf": "master",
+            "anyOf": "newbie"
+        },
+        "to": {
+            "x-anyOf": "expert",
+            "x-x-anyOf": "master",
+            "x-x-x-anyOf": "newbie"
+        }
+    }
+]

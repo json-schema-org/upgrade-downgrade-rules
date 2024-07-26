@@ -1,0 +1,24 @@
+[
+    {
+        "title": "$defs present in the schema",
+        "from": {
+            "$defs": "newbie"
+        },
+        "to": {
+            "x-$defs": "newbie"            
+        }
+    },
+    {
+        "title": "$defs with $defs having `x-` as prefix",
+        "from": {
+            "x-$defs": "expert",
+            "x-x-$defs": "master",
+            "$defs": "newbie"
+        },
+        "to": {
+            "x-$defs": "expert",
+            "x-x-$defs": "master",
+            "x-x-x-$defs": "newbie"
+        }
+    }
+]

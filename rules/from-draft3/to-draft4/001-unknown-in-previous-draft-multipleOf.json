@@ -1,0 +1,9 @@
+{
+    "vocabulary": "core",
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "multipleOf" }
+    ],
+    "transform": [
+        { "operation": "prefix-until-unique", "path": [ "multipleOf" ], "value": "x-" } 
+    ]
+}

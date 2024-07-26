@@ -1,0 +1,24 @@
+[
+    {
+        "title": "allOf present in the schema",
+        "from": {
+            "allOf": "newbie"
+        },
+        "to": {
+            "x-allOf": "newbie"            
+        }
+    },
+    {
+        "title": "allOf with allOf having `x-` as prefix",
+        "from": {
+            "x-allOf": "expert",
+            "x-x-allOf": "master",
+            "allOf": "newbie"
+        },
+        "to": {
+            "x-allOf": "expert",
+            "x-x-allOf": "master",
+            "x-x-x-allOf": "newbie"
+        }
+    }
+]

@@ -1,0 +1,24 @@
+[
+    {
+        "title": "dependentRequired present in the schema",
+        "from": {
+            "dependentRequired": "newbie"
+        },
+        "to": {
+            "x-dependentRequired": "newbie"            
+        }
+    },
+    {
+        "title": "dependentRequired with dependentRequired having `x-` as prefix",
+        "from": {
+            "x-dependentRequired": "expert",
+            "x-x-dependentRequired": "master",
+            "dependentRequired": "newbie"
+        },
+        "to": {
+            "x-dependentRequired": "expert",
+            "x-x-dependentRequired": "master",
+            "x-x-x-dependentRequired": "newbie"
+        }
+    }
+]

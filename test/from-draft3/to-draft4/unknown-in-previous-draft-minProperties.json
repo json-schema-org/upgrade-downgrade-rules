@@ -1,0 +1,24 @@
+[
+    {
+        "title": "minProperties present in the schema",
+        "from": {
+            "minProperties": "newbie"
+        },
+        "to": {
+            "x-minProperties": "newbie"            
+        }
+    },
+    {
+        "title": "minProperties with minProperties having `x-` as prefix",
+        "from": {
+            "x-minProperties": "expert",
+            "x-x-minProperties": "master",
+            "minProperties": "newbie"
+        },
+        "to": {
+            "x-minProperties": "expert",
+            "x-x-minProperties": "master",
+            "x-x-x-minProperties": "newbie"
+        }
+    }
+]

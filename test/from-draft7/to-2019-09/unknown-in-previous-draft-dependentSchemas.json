@@ -1,0 +1,24 @@
+[
+    {
+        "title": "dependentSchemas present in the schema",
+        "from": {
+            "dependentSchemas": "newbie"
+        },
+        "to": {
+            "x-dependentSchemas": "newbie"            
+        }
+    },
+    {
+        "title": "dependentSchemas with dependentSchemas having `x-` as prefix",
+        "from": {
+            "x-dependentSchemas": "expert",
+            "x-x-dependentSchemas": "master",
+            "dependentSchemas": "newbie"
+        },
+        "to": {
+            "x-dependentSchemas": "expert",
+            "x-x-dependentSchemas": "master",
+            "x-x-x-dependentSchemas": "newbie"
+        }
+    }
+]

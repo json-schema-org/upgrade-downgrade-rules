@@ -1,0 +1,24 @@
+[
+    {
+        "title": "maxProperties present in the schema",
+        "from": {
+            "maxProperties": "newbie"
+        },
+        "to": {
+            "x-maxProperties": "newbie"            
+        }
+    },
+    {
+        "title": "maxProperties with maxProperties having `x-` as prefix",
+        "from": {
+            "x-maxProperties": "expert",
+            "x-x-maxProperties": "master",
+            "maxProperties": "newbie"
+        },
+        "to": {
+            "x-maxProperties": "expert",
+            "x-x-maxProperties": "master",
+            "x-x-x-maxProperties": "newbie"
+        }
+    }
+]
