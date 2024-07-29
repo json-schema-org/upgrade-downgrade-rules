@@ -1,0 +1,11 @@
+[
+    {
+        "title": "Extends is an array, allOf is absent",
+        "from": {
+            "extends": [ {}, { "type": "string" } ]
+        },
+        "to": {
+            "allOf": [ {}, { "type": "string" } ]
+        }
+    }
+]
