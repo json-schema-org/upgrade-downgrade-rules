@@ -1,6 +1,6 @@
 [
     {
-        "title": "`disallow` is present and contains array of strings and allOf absent",
+        "title": "`disallow` is present and is an array, allOf absent",
         "from": {
             "disallow": [ "number", "string" ]
         },
