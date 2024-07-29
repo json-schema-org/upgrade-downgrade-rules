@@ -1,0 +1,9 @@
+[
+    {
+        "title": "`dependencies` is an object of zero properties",
+        "from": {
+            "dependencies": {}
+        },
+        "to": {}
+    }
+]
