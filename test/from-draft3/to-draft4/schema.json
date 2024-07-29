@@ -39,7 +39,7 @@
         "title": "Nested matching schema",
         "from": {
             "$schema": "https://json-schema.org/draft-03/schema",
-            "$defs": {
+            "properties": {
                 "foo": {
                     "$schema": "https://json-schema.org/draft-03/schema"
                 }
@@ -47,7 +47,7 @@
         },
         "to": {
             "$schema": "https://json-schema.org/draft-04/schema",
-            "$defs": {
+            "properties": {
                 "foo": {
                     "$schema": "https://json-schema.org/draft-04/schema"
                 }
@@ -58,7 +58,7 @@
         "title": "Nested half matching schema",
         "from": {
             "$schema": "https://json-schema.org/draft/2020-12/schema",
-            "$defs": {
+            "properties": {
                 "foo": {
                     "$schema": "https://json-schema.org/draft-03/schema"
                 }
@@ -66,7 +66,7 @@
         },
         "to": {
             "$schema": "https://json-schema.org/draft/2020-12/schema",
-            "$defs": {
+            "properties": {
                 "foo": {
                     "$schema": "https://json-schema.org/draft-04/schema"
                 }
