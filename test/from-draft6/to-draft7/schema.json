@@ -2,36 +2,36 @@
     {
         "title": "Simple matching schema",
         "from": {
-            "$schema": "https://json-schema.org/draft-06/schema"
+            "$schema": "http://json-schema.org/draft-06/schema#"
         },
         "to": {
-            "$schema": "https://json-schema.org/draft-07/schema"
+            "$schema": "http://json-schema.org/draft-07/schema#"
         }
     },
     {
         "title": "Simple non matching schema",
         "from": {
-            "$schema": "https://json-schema.org/draft-07/schema"
+            "$schema": "http://json-schema.org/draft-07/schema#"
         },
         "to": {
-            "$schema": "https://json-schema.org/draft-07/schema"
+            "$schema": "http://json-schema.org/draft-07/schema#"
         }
     },
     {
         "title": "Nested matching schema",
         "from": {
-            "$schema": "https://json-schema.org/draft-06/schema",
-            "$defs": {
+            "$schema": "http://json-schema.org/draft-06/schema#",
+            "definitions": {
                 "foo": {
-                    "$schema": "https://json-schema.org/draft-06/schema"
+                    "$schema": "http://json-schema.org/draft-06/schema#"
                 }
             }
         },
         "to": {
-            "$schema": "https://json-schema.org/draft-07/schema",
-            "$defs": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "definitions": {
                 "foo": {
-                    "$schema": "https://json-schema.org/draft-07/schema"
+                    "$schema": "http://json-schema.org/draft-07/schema#"
                 }
             }
         }
@@ -39,18 +39,18 @@
     {
         "title": "Nested half matching schema",
         "from": {
-            "$schema": "https://json-schema.org/draft-07/schema",
-            "$defs": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "definitions": {
                 "foo": {
-                    "$schema": "https://json-schema.org/draft-06/schema"
+                    "$schema": "http://json-schema.org/draft-06/schema#"
                 }
             }
         },
         "to": {
-            "$schema": "https://json-schema.org/draft-07/schema",
-            "$defs": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "definitions": {
                 "foo": {
-                    "$schema": "https://json-schema.org/draft-07/schema"
+                    "$schema": "http://json-schema.org/draft-07/schema#"
                 }
             }
         }
@@ -58,15 +58,15 @@
     {
         "title": "$schema inside unknown keyword",
         "from": {
-            "$schema": "https://json-schema.org/draft-06/schema",
+            "$schema": "http://json-schema.org/draft-06/schema#",
             "foo": {
-                "$schema": "https://json-schema.org/draft-06/schema"
+                "$schema": "http://json-schema.org/draft-06/schema#"
             }
         },
         "to": {
-            "$schema": "https://json-schema.org/draft-07/schema",
+            "$schema": "http://json-schema.org/draft-07/schema#",
             "foo": {
-                "$schema": "https://json-schema.org/draft-06/schema"
+                "$schema": "http://json-schema.org/draft-06/schema#"
             }
         }
     }
