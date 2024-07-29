@@ -1,0 +1,10 @@
+{
+    "vocabulary": "core",
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "dependencies" },
+        { "operation": "type-is", "path": [ "dependencies", {} ], "value": "string" }
+    ],
+    "transform": [
+        { "operation": "remove-and-append", "from": [ "dependencies", {} ], "to": [ "dependencies", {} ] }
+    ]
+}
