@@ -9,6 +9,24 @@
         }
     },
     {
+        "name": "$schema with https scheme",
+        "schema": {
+            "$schema": "https://json-schema.org/draft-07/schema#"
+        },
+        "expected": {
+            "$schema": "https://json-schema.org/draft/2019-09/schema"
+      }
+    },
+    {
+        "name": "$schema without an empty fragment",
+        "schema": {
+            "$schema": "http://json-schema.org/draft-07/schema"
+        },
+        "expected": {
+        "$schema": "https://json-schema.org/draft/2019-09/schema"
+      }
+    },
+    {
         "title": "Simple non matching schema",
         "from": {
             "$schema": "https://json-schema.org/draft/2020-12/schema"
