@@ -2,7 +2,7 @@
     "vocabulary": "core",
     "condition": [
         { "operation": "has-key", "path": [], "value": "$schema" },
-        { "operation": "equals", "path": [ "$schema" ], "value": "https://json-schema.org/draft-07/schema" }
+        { "operation": "match-pattern", "path": [ "$schema" ], "value": "^http[s]?://json-schema.org/draft-07/schema[#]?$" }
     ],
     "transform": [
         { "operation": "replace", "path": [ "$schema" ], "value": "https://json-schema.org/draft/2019-09/schema" }
