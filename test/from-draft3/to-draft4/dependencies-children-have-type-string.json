@@ -1,0 +1,17 @@
+[
+    {
+        "title": "`dependencies` children properties are of type string",
+        "from": {
+            "dependencies": {
+                "foo": "bar",
+                "bar": "baz"
+            }
+        },
+        "to": {
+            "dependencies": {
+                "foo": [ "bar" ],
+                "bar": [ "baz" ]
+            }
+        }
+    }
+]
