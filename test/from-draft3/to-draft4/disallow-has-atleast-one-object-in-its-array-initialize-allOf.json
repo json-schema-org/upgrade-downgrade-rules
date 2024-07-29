@@ -2,10 +2,10 @@
     {
         "title": "`disallow` is present and contains atleast one object in it",
         "from": {
-            "disallow": [ "any", {}, "string" ]
+            "disallow": [ {}, "string" ]
         },
         "to": {
-            "disallow": [ "any", {}, "string" ],
+            "disallow": [ {}, "string" ],
             "allOf": []
         }
     }
