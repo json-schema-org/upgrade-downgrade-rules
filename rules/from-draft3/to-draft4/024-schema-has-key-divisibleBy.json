@@ -1,9 +1,0 @@
-{
-    "vocabulary": "core",
-    "condition": [
-        { "operation": "has-key", "path": [], "value": "divisibleBy" }
-    ],
-    "transform": [
-        { "operation": "move", "to": [ "multipleOf" ], "from": [ "divisibleBy" ] } 
-    ]
-}

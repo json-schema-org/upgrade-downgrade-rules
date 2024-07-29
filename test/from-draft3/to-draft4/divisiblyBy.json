@@ -5,7 +5,7 @@
             "divisibleBy": -1
         },
         "to": {
-            "divisibleBy": 1
+            "multipleOf": 1
         }
     }
 ]

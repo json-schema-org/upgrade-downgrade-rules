@@ -1,0 +1,10 @@
+{
+    "vocabulary": "core",
+    "condition": [
+        { "operation": "has-key", "path": [], "value": "divisibleBy" }
+    ],
+    "transform": [
+        { "operation": "replace-with-absolute", "path": [ "divisibleBy" ] },
+        { "operation": "move", "to": [ "multipleOf" ], "from": [ "divisibleBy" ] }
+    ]
+}
