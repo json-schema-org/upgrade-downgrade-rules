@@ -1,0 +1,9 @@
+{
+    "vocabulary": "core",
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "$comment" }
+    ],
+    "transform": [
+        { "operation": "prefix-until-unique", "path": [ "$comment" ], "value": "x-" } 
+    ]
+}

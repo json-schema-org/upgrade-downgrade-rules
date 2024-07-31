@@ -1,0 +1,24 @@
+[
+    {
+        "title": "contentMediaType present in the schema",
+        "from": {
+            "contentMediaType": "newbie"
+        },
+        "to": {
+            "x-contentMediaType": "newbie"            
+        }
+    },
+    {
+        "title": "contentMediaType with contentMediaType having `x-` as prefix",
+        "from": {
+            "x-contentMediaType": "expert",
+            "x-x-contentMediaType": "master",
+            "contentMediaType": "newbie"
+        },
+        "to": {
+            "x-contentMediaType": "expert",
+            "x-x-contentMediaType": "master",
+            "x-x-x-contentMediaType": "newbie"
+        }
+    }
+]

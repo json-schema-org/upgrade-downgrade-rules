@@ -1,0 +1,24 @@
+[
+    {
+        "title": "then present in the schema",
+        "from": {
+            "then": "newbie"
+        },
+        "to": {
+            "x-then": "newbie"            
+        }
+    },
+    {
+        "title": "then with then having `x-` as prefix",
+        "from": {
+            "x-then": "expert",
+            "x-x-then": "master",
+            "then": "newbie"
+        },
+        "to": {
+            "x-then": "expert",
+            "x-x-then": "master",
+            "x-x-x-then": "newbie"
+        }
+    }
+]

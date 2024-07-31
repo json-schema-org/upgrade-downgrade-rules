@@ -1,0 +1,9 @@
+{
+    "vocabulary": "validation",
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "writeOnly" }
+    ],
+    "transform": [
+        { "operation": "prefix-until-unique", "path": [ "writeOnly" ], "value": "x-" } 
+    ]
+}

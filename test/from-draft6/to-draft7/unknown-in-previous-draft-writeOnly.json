@@ -1,0 +1,24 @@
+[
+    {
+        "title": "writeOnly present in the schema",
+        "from": {
+            "writeOnly": "newbie"
+        },
+        "to": {
+            "x-writeOnly": "newbie"            
+        }
+    },
+    {
+        "title": "writeOnly with writeOnly having `x-` as prefix",
+        "from": {
+            "x-writeOnly": "expert",
+            "x-x-writeOnly": "master",
+            "writeOnly": "newbie"
+        },
+        "to": {
+            "x-writeOnly": "expert",
+            "x-x-writeOnly": "master",
+            "x-x-x-writeOnly": "newbie"
+        }
+    }
+]
