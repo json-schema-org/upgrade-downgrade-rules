@@ -1,0 +1,24 @@
+[
+    {
+        "title": "if present in the schema",
+        "from": {
+            "if": "newbie"
+        },
+        "to": {
+            "x-if": "newbie"            
+        }
+    },
+    {
+        "title": "if with if having `x-` as prefix",
+        "from": {
+            "x-if": "expert",
+            "x-x-if": "master",
+            "if": "newbie"
+        },
+        "to": {
+            "x-if": "expert",
+            "x-x-if": "master",
+            "x-x-x-if": "newbie"
+        }
+    }
+]

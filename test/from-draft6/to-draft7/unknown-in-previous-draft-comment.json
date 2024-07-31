@@ -1,0 +1,24 @@
+[
+    {
+        "title": "$comment present in the schema",
+        "from": {
+            "$comment": "newbie"
+        },
+        "to": {
+            "x-$comment": "newbie"            
+        }
+    },
+    {
+        "title": "$comment with $comment having `x-` as prefix",
+        "from": {
+            "x-$comment": "expert",
+            "x-x-$comment": "master",
+            "$comment": "newbie"
+        },
+        "to": {
+            "x-$comment": "expert",
+            "x-x-$comment": "master",
+            "x-x-x-$comment": "newbie"
+        }
+    }
+]

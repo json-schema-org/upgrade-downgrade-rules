@@ -1,0 +1,24 @@
+[
+    {
+        "title": "contentEncoding present in the schema",
+        "from": {
+            "contentEncoding": "newbie"
+        },
+        "to": {
+            "x-contentEncoding": "newbie"            
+        }
+    },
+    {
+        "title": "contentEncoding with contentEncoding having `x-` as prefix",
+        "from": {
+            "x-contentEncoding": "expert",
+            "x-x-contentEncoding": "master",
+            "contentEncoding": "newbie"
+        },
+        "to": {
+            "x-contentEncoding": "expert",
+            "x-x-contentEncoding": "master",
+            "x-x-x-contentEncoding": "newbie"
+        }
+    }
+]
