@@ -7,9 +7,9 @@
             "additionalItems": false
         },
         "to": {
-            "prefiItems": [ { "type": "string" } ],
+            "prefixItems": [ { "type": "string" } ],
             "x-prefixItems": "dummy",
-            "additionalItems": false
+            "items": false
         }
     },
     {
