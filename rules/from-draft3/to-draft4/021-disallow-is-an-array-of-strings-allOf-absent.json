@@ -3,6 +3,7 @@
     "condition": [ 
         { "operation": "has-key", "path": [], "value": "disallow" },
         { "operation": "type-is", "path": [ "disallow" ], "value": "array" },
+        { "operation": "contains-type", "path": [ "disallow" ], "value": "string" },
         { "operation": "not-has-key", "path": [], "value": "allOf" }
     ],
     "transform": [

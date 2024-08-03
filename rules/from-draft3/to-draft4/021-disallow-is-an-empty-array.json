@@ -2,11 +2,10 @@
     "vocabulary": "core",
     "condition": [ 
         { "operation": "has-key", "path": [], "value": "disallow" },
-        { "operation": "not-has-key", "path": [], "value": "allOf" },
         { "operation": "type-is", "path": [ "disallow" ], "value": "array" },
-        { "operation": "contains-type", "path": [ "disallow" ], "value": "object" }
+        { "operation": "size-equals", "path": [ "disallow" ], "value": 0 }
     ],
     "transform": [
-        { "operation": "add", "path": [ "allOf" ], "value": [] }
+        { "operation": "remove", "path": [ "disallow" ] }
     ]
 }
