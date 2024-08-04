@@ -9,5 +9,12 @@
             "exclusiveMinimum": 3,
             "minimum": 3
         }
+    },
+    {
+        "title": "exclusiveMinimum present in the schema and value equals false",
+        "from": {
+            "exclusiveMinimum": false
+        },
+        "to": {}
     }
 ]
