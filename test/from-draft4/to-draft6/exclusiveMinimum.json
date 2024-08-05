@@ -1,0 +1,20 @@
+[
+    {
+        "title": "exclusiveMinimum and minimum present in the schema and exclusiveMinimum equals true",
+        "from": {
+            "exclusiveMinimum": true,
+            "minimum": 3
+        },
+        "to": {
+            "exclusiveMinimum": 3,
+            "minimum": 3
+        }
+    },
+    {
+        "title": "exclusiveMinimum present in the schema and value equals false",
+        "from": {
+            "exclusiveMinimum": false
+        },
+        "to": {}
+    }
+]
