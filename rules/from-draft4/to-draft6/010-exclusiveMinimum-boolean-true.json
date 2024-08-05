@@ -1,0 +1,11 @@
+{
+    "vocabulary": "validation",
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "exclusiveMinimum" },
+        { "operation": "equals", "path": [ "exclusiveMinimum" ], "value": true },
+        { "operation": "has-key", "path": [], "value": "minimum" }
+    ],
+    "transform": [
+        { "operation": "copy", "to": [ "exclusiveMinimum" ], "from": [ "minimum" ] } 
+    ]
+}
