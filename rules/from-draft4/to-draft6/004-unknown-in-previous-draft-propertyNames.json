@@ -1,0 +1,9 @@
+{
+    "vocabulary": "valildation",
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "propertyNames" }
+    ],
+    "transform": [
+        { "operation": "prefix-until-unique", "path": [ "propertyNames" ], "value": "x-" } 
+    ]
+}
