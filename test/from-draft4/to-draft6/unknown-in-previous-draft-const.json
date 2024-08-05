@@ -1,0 +1,24 @@
+[
+    {
+        "title": "const present in the schema",
+        "from": {
+            "const": "newbie"
+        },
+        "to": {
+            "x-const": "newbie"            
+        }
+    },
+    {
+        "title": "const with const having `x-` as prefix",
+        "from": {
+            "x-const": "expert",
+            "x-x-const": "master",
+            "const": "newbie"
+        },
+        "to": {
+            "x-const": "expert",
+            "x-x-const": "master",
+            "x-x-x-const": "newbie"
+        }
+    }
+]

@@ -1,0 +1,24 @@
+[
+    {
+        "title": "contains present in the schema",
+        "from": {
+            "contains": "newbie"
+        },
+        "to": {
+            "x-contains": "newbie"            
+        }
+    },
+    {
+        "title": "contains with contains having `x-` as prefix",
+        "from": {
+            "x-contains": "expert",
+            "x-x-contains": "master",
+            "contains": "newbie"
+        },
+        "to": {
+            "x-contains": "expert",
+            "x-x-contains": "master",
+            "x-x-x-contains": "newbie"
+        }
+    }
+]

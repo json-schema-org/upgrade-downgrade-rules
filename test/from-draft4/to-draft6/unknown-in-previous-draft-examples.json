@@ -1,0 +1,24 @@
+[
+    {
+        "title": "examples present in the schema",
+        "from": {
+            "examples": "newbie"
+        },
+        "to": {
+            "x-examples": "newbie"            
+        }
+    },
+    {
+        "title": "examples with examples having `x-` as prefix",
+        "from": {
+            "x-examples": "expert",
+            "x-x-examples": "master",
+            "examples": "newbie"
+        },
+        "to": {
+            "x-examples": "expert",
+            "x-x-examples": "master",
+            "x-x-x-examples": "newbie"
+        }
+    }
+]

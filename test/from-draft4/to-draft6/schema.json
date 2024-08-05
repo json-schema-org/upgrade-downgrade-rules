@@ -1,0 +1,73 @@
+[
+    {
+        "title": "Simple matching schema",
+        "from": {
+            "$schema": "https://json-schema.org/draft-04/schema#"
+        },
+        "to": {
+            "$schema": "http://json-schema.org/draft-06/schema#"
+        }
+    },
+    {
+        "title": "Simple non matching schema",
+        "from": {
+            "$schema": "http://json-schema.org/draft-06/schema#"
+        },
+        "to": {
+            "$schema": "http://json-schema.org/draft-06/schema#"
+        }
+    },
+    {
+        "title": "Nested matching schema",
+        "from": {
+            "$schema": "https://json-schema.org/draft-04/schema#",
+            "definitions": {
+                "foo": {
+                    "$schema": "https://json-schema.org/draft-04/schema#"
+                }
+            }
+        },
+        "to": {
+            "$schema": "http://json-schema.org/draft-06/schema#",
+            "definitions": {
+                "foo": {
+                    "$schema": "http://json-schema.org/draft-06/schema#"
+                }
+            }
+        }
+    },
+    {
+        "title": "Nested half matching schema",
+        "from": {
+            "$schema": "http://json-schema.org/draft-06/schema#",
+            "definitions": {
+                "foo": {
+                    "$schema": "https://json-schema.org/draft-04/schema#"
+                }
+            }
+        },
+        "to": {
+            "$schema": "http://json-schema.org/draft-06/schema#",
+            "definitions": {
+                "foo": {
+                    "$schema": "http://json-schema.org/draft-06/schema#"
+                }
+            }
+        }
+    },
+    {
+        "title": "$schema inside unknown keyword",
+        "from": {
+            "$schema": "https://json-schema.org/draft-04/schema#",
+            "foo": {
+                "$schema": "https://json-schema.org/draft-04/schema#"
+            }
+        },
+        "to": {
+            "$schema": "http://json-schema.org/draft-06/schema#",
+            "foo": {
+                "$schema": "https://json-schema.org/draft-04/schema#"
+            }
+        }
+    }
+]

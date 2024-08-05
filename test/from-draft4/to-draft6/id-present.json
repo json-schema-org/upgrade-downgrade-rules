@@ -1,0 +1,11 @@
+[
+    {
+        "title": "id present in the schema",
+        "from": {
+            "id": "http://example.com"
+        },
+        "to": {
+            "$id": "http://example.com"
+        }
+    }
+]

@@ -1,0 +1,24 @@
+[
+    {
+        "title": "propertyNames present in the schema",
+        "from": {
+            "propertyNames": "newbie"
+        },
+        "to": {
+            "x-propertyNames": "newbie"            
+        }
+    },
+    {
+        "title": "propertyNames with propertyNames having `x-` as prefix",
+        "from": {
+            "x-propertyNames": "expert",
+            "x-x-propertyNames": "master",
+            "propertyNames": "newbie"
+        },
+        "to": {
+            "x-propertyNames": "expert",
+            "x-x-propertyNames": "master",
+            "x-x-x-propertyNames": "newbie"
+        }
+    }
+]
