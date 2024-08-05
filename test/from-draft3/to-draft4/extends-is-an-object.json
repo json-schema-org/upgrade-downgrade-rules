@@ -1,5 +1,14 @@
 [
     {
+        "title": "Extends is an object, allOf is absent",
+        "from": {
+            "extends": { "type": "string" }
+        },
+        "to": {
+            "allOf": [ { "type": "string" } ]
+        }
+    },
+    {
         "title": "Extends is an object, allOf is present",
         "from": {
             "extends": { "type": "string" },

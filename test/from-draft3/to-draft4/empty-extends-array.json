@@ -1,9 +1,0 @@
-[
-    {
-        "title": "Extends is an empty array",
-        "from": {
-            "extends": []
-        },
-        "to": {}
-    }
-]

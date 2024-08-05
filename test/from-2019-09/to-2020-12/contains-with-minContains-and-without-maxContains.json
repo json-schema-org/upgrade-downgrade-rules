@@ -1,15 +1,13 @@
 [
     {
-        "title": "`contains` keyword having schema with and minContains without maxContains, allOf is present",
+        "title": "`contains` keyword having schema with and minContains without maxContains, allOf is absent",
         "from": {
             "contains": { "type": "string" },
             "minContains": 2,
-            "unevaluatedItems": false,
-            "allOf": [ {} ]
+            "unevaluatedItems": false
         },
         "to": {
             "allOf": [
-                {},
                 {
                     "not": {
                         "not": {

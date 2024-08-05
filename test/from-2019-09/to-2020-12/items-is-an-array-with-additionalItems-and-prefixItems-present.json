@@ -31,12 +31,12 @@
         "title": "`items` is not an array, prefixItems and additionalItems are present",
         "from": {
             "items": true,
-            "prefixItems": "dummy2",
+            "prefixItems": "dummy",
             "additionalItems": false
         },
         "to": {
             "items": true,
-            "prefixItems": "dummy1",
+            "x-prefixItems": "dummy",
             "additionalItems": false
         }
     }
