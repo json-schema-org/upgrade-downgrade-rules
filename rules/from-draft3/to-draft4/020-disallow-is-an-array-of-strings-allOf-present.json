@@ -1,0 +1,14 @@
+{
+    "vocabulary": "core",
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "disallow" },
+        { "operation": "type-is", "path": [ "disallow" ], "value": "array" },
+        { "operation": "contains-type", "path": [ "disallow" ], "value": "string" },
+        { "operation": "has-key", "path": [], "value": "allOf" }
+    ],
+    "transform": [
+        { "operation": "add", "path": [ "allOf", "-" ], "value": { "not": "temp" } },
+        { "operation": "add", "path": [ "allOf", "-", "not" ], "value": { "type": "temp" } },
+        { "operation": "move", "to": [ "allOf", "-", "not", "type" ], "from": [ "disallow" ] }
+    ]
+}

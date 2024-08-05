@@ -1,0 +1,11 @@
+{
+    "vocabulary": "core",
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "disallow" },
+        { "operation": "equals", "path": [ "disallow" ], "value": "any" } 
+    ],
+    "transform": [
+        { "operation": "add", "path": [ "not" ], "value": {} },
+        { "operation": "remove", "path": [ "disallow" ] }
+    ]
+}
