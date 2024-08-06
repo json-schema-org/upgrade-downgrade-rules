@@ -2,29 +2,29 @@
     {
         "title": "Simple matching schema",
         "from": {
-            "$schema": "https://json-schema.org/draft-07/schema"
+            "$schema": "https://json-schema.org/draft-03/schema"
         },
         "to": {
-            "$schema": "https://json-schema.org/draft/2019-09/schema"
+            "$schema": "https://json-schema.org/draft-04/schema"
         }
     },
     {
         "name": "$schema with https scheme",
-        "schema": {
-            "$schema": "https://json-schema.org/draft-07/schema#"
+        "from": {
+          "$schema": "http://json-schema.org/draft-03/schema#"
         },
-        "expected": {
-            "$schema": "https://json-schema.org/draft/2019-09/schema"
-      }
+        "to": {
+          "$schema": "http://json-schema.org/draft-04/schema#"
+        }
     },
     {
         "name": "$schema without an empty fragment",
-        "schema": {
-            "$schema": "http://json-schema.org/draft-07/schema"
+        "from": {
+          "$schema": "http://json-schema.org/draft-03/schema"
         },
-        "expected": {
-        "$schema": "https://json-schema.org/draft/2019-09/schema"
-      }
+        "to": {
+          "$schema": "http://json-schema.org/draft-04/schema#"
+        }
     },
     {
         "title": "Simple non matching schema",
@@ -38,18 +38,18 @@
     {
         "title": "Nested matching schema",
         "from": {
-            "$schema": "https://json-schema.org/draft-07/schema",
+            "$schema": "https://json-schema.org/draft-03/schema",
             "properties": {
                 "foo": {
-                    "$schema": "https://json-schema.org/draft-07/schema"
+                    "$schema": "https://json-schema.org/draft-03/schema"
                 }
             }
         },
         "to": {
-            "$schema": "https://json-schema.org/draft/2019-09/schema",
+            "$schema": "https://json-schema.org/draft-04/schema",
             "properties": {
                 "foo": {
-                    "$schema": "https://json-schema.org/draft/2019-09/schema"
+                    "$schema": "https://json-schema.org/draft-04/schema"
                 }
             }
         }
@@ -60,7 +60,7 @@
             "$schema": "https://json-schema.org/draft/2020-12/schema",
             "properties": {
                 "foo": {
-                    "$schema": "https://json-schema.org/draft-07/schema"
+                    "$schema": "https://json-schema.org/draft-03/schema"
                 }
             }
         },
@@ -68,7 +68,7 @@
             "$schema": "https://json-schema.org/draft/2020-12/schema",
             "properties": {
                 "foo": {
-                    "$schema": "https://json-schema.org/draft/2019-09/schema"
+                    "$schema": "https://json-schema.org/draft-04/schema"
                 }
             }
         }
@@ -76,15 +76,15 @@
     {
         "title": "$schema inside unknown keyword",
         "from": {
-            "$schema": "https://json-schema.org/draft-07/schema",
+            "$schema": "https://json-schema.org/draft-03/schema",
             "foo": {
-                "$schema": "https://json-schema.org/draft-07/schema"
+                "$schema": "https://json-schema.org/draft-03/schema"
             }
         },
         "to": {
-            "$schema": "https://json-schema.org/draft/2019-09/schema",
+            "$schema": "https://json-schema.org/draft-04/schema",
             "foo": {
-                "$schema": "https://json-schema.org/draft-07/schema"
+                "$schema": "https://json-schema.org/draft-03/schema"
             }
         }
     }
