@@ -18,10 +18,9 @@
         }
     },
     {
-        "title": "`disallow` is present and contains atleast one object and allOf present",
+        "title": "`disallow` is present and contains atleast one object",
         "from": {
-            "disallow": [ {}, { "type": "string"} ],
-            "allOf": []
+            "disallow": [ {}, { "type": "string"} ]
         },
         "to": {
             "allOf": [
