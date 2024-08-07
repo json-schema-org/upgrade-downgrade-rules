@@ -1,0 +1,24 @@
+[
+    {
+        "title": "exclusiveMinimum present in the schema",
+        "from": {
+            "exclusiveMinimum": "newbie"
+        },
+        "to": {
+            "x-exclusiveMinimum": "newbie"            
+        }
+    },
+    {
+        "title": "exclusiveMinimum with exclusiveMinimum having `x-` as prefix",
+        "from": {
+            "x-exclusiveMinimum": "expert",
+            "x-x-exclusiveMinimum": "master",
+            "exclusiveMinimum": "newbie"
+        },
+        "to": {
+            "x-exclusiveMinimum": "expert",
+            "x-x-exclusiveMinimum": "master",
+            "x-x-x-exclusiveMinimum": "newbie"
+        }
+    }
+]

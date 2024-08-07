@@ -1,0 +1,9 @@
+{
+    "vocabulary": null,
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "patternProperties" }
+    ],
+    "transform": [
+        { "operation": "prefix-until-unique", "path": [ "patternProperties" ], "value": "x-" } 
+    ]
+}

@@ -1,0 +1,24 @@
+[
+    {
+        "title": "required present in the schema",
+        "from": {
+            "required": "newbie"
+        },
+        "to": {
+            "x-required": "newbie"            
+        }
+    },
+    {
+        "title": "required with required having `x-` as prefix",
+        "from": {
+            "x-required": "expert",
+            "x-x-required": "master",
+            "required": "newbie"
+        },
+        "to": {
+            "x-required": "expert",
+            "x-x-required": "master",
+            "x-x-x-required": "newbie"
+        }
+    }
+]

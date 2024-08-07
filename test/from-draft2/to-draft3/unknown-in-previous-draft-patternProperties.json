@@ -1,0 +1,24 @@
+[
+    {
+        "title": "patternProperties present in the schema",
+        "from": {
+            "patternProperties": "newbie"
+        },
+        "to": {
+            "x-patternProperties": "newbie"            
+        }
+    },
+    {
+        "title": "patternProperties with patternProperties having `x-` as prefix",
+        "from": {
+            "x-patternProperties": "expert",
+            "x-x-patternProperties": "master",
+            "patternProperties": "newbie"
+        },
+        "to": {
+            "x-patternProperties": "expert",
+            "x-x-patternProperties": "master",
+            "x-x-x-patternProperties": "newbie"
+        }
+    }
+]
