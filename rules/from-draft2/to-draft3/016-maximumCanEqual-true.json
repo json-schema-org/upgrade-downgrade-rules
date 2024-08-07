@@ -1,0 +1,10 @@
+{
+    "vocabulary": "core",
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "maximumCanEqual" },
+        { "operation": "equals", "path": [ "maximumCanEqual" ], "value": true } 
+    ],
+    "transform": [
+        { "operation": "remove", "path": [ "maximumCanEqual" ] } 
+    ]
+}
