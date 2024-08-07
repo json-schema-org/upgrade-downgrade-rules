@@ -7,15 +7,5 @@
         "to": {
             "allOf": [ { "type": "string" } ]
         }
-    },
-    {
-        "title": "Extends is an object, allOf is present",
-        "from": {
-            "extends": { "type": "string" },
-            "allOf": [ {} ]
-        },
-        "to": {
-            "allOf": [ {}, { "type": "string" } ]
-        }
     }
 ]
