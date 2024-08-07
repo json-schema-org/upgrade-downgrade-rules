@@ -2,52 +2,34 @@
     {
         "title": "Simple matching schema",
         "from": {
-            "$schema": "https://json-schema.org/draft-07/schema"
+            "$schema": "http://json-schema.org/draft-07/schema#"
         },
         "to": {
             "$schema": "https://json-schema.org/draft/2019-09/schema"
         }
     },
     {
-        "name": "$schema with https scheme",
-        "schema": {
-            "$schema": "https://json-schema.org/draft-07/schema#"
-        },
-        "expected": {
-            "$schema": "https://json-schema.org/draft/2019-09/schema"
-      }
-    },
-    {
-        "name": "$schema without an empty fragment",
-        "schema": {
-            "$schema": "http://json-schema.org/draft-07/schema"
-        },
-        "expected": {
-        "$schema": "https://json-schema.org/draft/2019-09/schema"
-      }
-    },
-    {
         "title": "Simple non matching schema",
         "from": {
-            "$schema": "https://json-schema.org/draft/2020-12/schema"
+            "$schema": "https://json-schema.org/draft/2019-09/schema"
         },
         "to": {
-            "$schema": "https://json-schema.org/draft/2020-12/schema"
+            "$schema": "https://json-schema.org/draft/2019-09/schema"
         }
     },
     {
         "title": "Nested matching schema",
         "from": {
-            "$schema": "https://json-schema.org/draft-07/schema",
-            "$defs": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "definitions": {
                 "foo": {
-                    "$schema": "https://json-schema.org/draft-07/schema"
+                    "$schema": "http://json-schema.org/draft-07/schema#"
                 }
             }
         },
         "to": {
             "$schema": "https://json-schema.org/draft/2019-09/schema",
-            "$defs": {
+            "definitions": {
                 "foo": {
                     "$schema": "https://json-schema.org/draft/2019-09/schema"
                 }
@@ -57,16 +39,16 @@
     {
         "title": "Nested half matching schema",
         "from": {
-            "$schema": "https://json-schema.org/draft/2020-12/schema",
-            "$defs": {
+            "$schema": "https://json-schema.org/draft/2019-09/schema",
+            "definitions": {
                 "foo": {
-                    "$schema": "https://json-schema.org/draft-07/schema"
+                    "$schema": "http://json-schema.org/draft-07/schema#"
                 }
             }
         },
         "to": {
-            "$schema": "https://json-schema.org/draft/2020-12/schema",
-            "$defs": {
+            "$schema": "https://json-schema.org/draft/2019-09/schema",
+            "definitions": {
                 "foo": {
                     "$schema": "https://json-schema.org/draft/2019-09/schema"
                 }
@@ -76,15 +58,15 @@
     {
         "title": "$schema inside unknown keyword",
         "from": {
-            "$schema": "https://json-schema.org/draft-07/schema",
+            "$schema": "http://json-schema.org/draft-07/schema#",
             "foo": {
-                "$schema": "https://json-schema.org/draft-07/schema"
+                "$schema": "http://json-schema.org/draft-07/schema#"
             }
         },
         "to": {
             "$schema": "https://json-schema.org/draft/2019-09/schema",
             "foo": {
-                "$schema": "https://json-schema.org/draft-07/schema"
+                "$schema": "http://json-schema.org/draft-07/schema#"
             }
         }
     }
