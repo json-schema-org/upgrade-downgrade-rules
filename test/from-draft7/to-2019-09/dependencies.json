@@ -1,0 +1,61 @@
+[
+    {
+        "title": "`dependencies` has properties whose subschema has type array",
+        "from": {
+            "dependencies": {
+                "foo": [ "bar", "baz" ],
+                "car": [ "wheel", "foo" ]
+            }
+        },
+        "to": {
+            "dependentRequired": {
+                "foo": [ "bar", "baz" ],
+                "car": [ "wheel", "foo" ]
+            }
+        }
+    },
+    {
+        "title": "`dependencies` has properties whose subschema has type object",
+        "from": {
+            "dependencies": {
+                "foo": {
+                    "minProperties": 2
+                },
+                "bar": {
+                    "type": "string"
+                }
+            }
+        },
+        "to": {
+            "dependentSchemas": {
+                "foo": {
+                    "minProperties": 2
+                },
+                "bar": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    {
+        "title": "`dependencies` has properties whose subschema has type objects and arrays",
+        "from": {
+            "dependencies": {
+                "foo": {
+                    "minProperties": 2
+                },
+                "bar": [ "foo" ]
+            }
+        },
+        "to": {
+            "dependentSchemas": {
+                "foo": {
+                    "minProperties": 2
+                }
+            },
+            "dependentRequired": {
+                "bar": [ "foo" ]
+            }
+        }
+    }
+]

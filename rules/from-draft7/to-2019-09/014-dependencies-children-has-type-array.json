@@ -1,0 +1,10 @@
+{
+    "vocabulary": "core",
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "dependencies" },
+        { "operation": "contains-type", "path": [ "dependencies" ], "value": "array" }
+    ],
+    "transform": [
+        { "operation": "add", "path": [ "dependentRequired" ], "value": {} }
+    ]
+}
