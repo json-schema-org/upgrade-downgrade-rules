@@ -1,0 +1,10 @@
+{
+    "vocabulary": "core",
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "minimumCanEqual" },
+        { "operation": "equals", "path": [ "minimumCanEqual" ], "value": true } 
+    ],
+    "transform": [
+        { "operation": "remove", "path": [ "minimumCanEqual" ] } 
+    ]
+}
