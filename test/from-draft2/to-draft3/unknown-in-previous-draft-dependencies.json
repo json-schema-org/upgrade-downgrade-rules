@@ -1,0 +1,24 @@
+[
+    {
+        "title": "dependencies present in the schema",
+        "from": {
+            "dependencies": "newbie"
+        },
+        "to": {
+            "x-dependencies": "newbie"            
+        }
+    },
+    {
+        "title": "dependencies with dependencies having `x-` as prefix",
+        "from": {
+            "x-dependencies": "expert",
+            "x-x-dependencies": "master",
+            "dependencies": "newbie"
+        },
+        "to": {
+            "x-dependencies": "expert",
+            "x-x-dependencies": "master",
+            "x-x-x-dependencies": "newbie"
+        }
+    }
+]

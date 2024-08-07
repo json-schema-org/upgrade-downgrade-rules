@@ -1,0 +1,24 @@
+[
+    {
+        "title": "$id present in the schema",
+        "from": {
+            "$id": "newbie"
+        },
+        "to": {
+            "x-$id": "newbie"            
+        }
+    },
+    {
+        "title": "$id with $id having `x-` as prefix",
+        "from": {
+            "x-$id": "expert",
+            "x-x-$id": "master",
+            "$id": "newbie"
+        },
+        "to": {
+            "x-$id": "expert",
+            "x-x-$id": "master",
+            "x-x-x-$id": "newbie"
+        }
+    }
+]

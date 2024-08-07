@@ -1,0 +1,24 @@
+[
+    {
+        "title": "$schema present in the schema",
+        "from": {
+            "$schema": "newbie"
+        },
+        "to": {
+            "x-$schema": "newbie"            
+        }
+    },
+    {
+        "title": "$schema with $schema having `x-` as prefix",
+        "from": {
+            "x-$schema": "expert",
+            "x-x-$schema": "master",
+            "$schema": "newbie"
+        },
+        "to": {
+            "x-$schema": "expert",
+            "x-x-$schema": "master",
+            "x-x-x-$schema": "newbie"
+        }
+    }
+]

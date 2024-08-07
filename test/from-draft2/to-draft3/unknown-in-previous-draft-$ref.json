@@ -1,0 +1,24 @@
+[
+    {
+        "title": "$ref present in the schema",
+        "from": {
+            "$ref": "newbie"
+        },
+        "to": {
+            "x-$ref": "newbie"            
+        }
+    },
+    {
+        "title": "$ref with $ref having `x-` as prefix",
+        "from": {
+            "x-$ref": "expert",
+            "x-x-$ref": "master",
+            "$ref": "newbie"
+        },
+        "to": {
+            "x-$ref": "expert",
+            "x-x-$ref": "master",
+            "x-x-x-$ref": "newbie"
+        }
+    }
+]
