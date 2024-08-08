@@ -1,0 +1,65 @@
+[
+    {
+        "title": "`required` is true in properties/{something} and required absent in outer schema",
+        "from": {
+            "properties": {
+                "foo": { "required": true },
+                "bar": { 
+                    "type": "string",
+                    "required": true 
+                }
+            }
+        },
+        "to": {
+            "properties": {
+                "foo": {},
+                "bar": { 
+                    "type": "string"
+                }
+            },
+            "required": [ "foo", "bar" ]
+        }
+    },
+    {
+        "title": "`required` is true in properties/{something} and required boolean in outer schema",
+        "from": {
+            "properties": {
+                "foo": { "required": true },
+                "bar": { 
+                    "type": "string",
+                    "required": true 
+                }
+            },
+            "required": false
+        },
+        "to": {
+            "properties": {
+                "foo": {},
+                "bar": { 
+                    "type": "string"
+                }
+            },
+            "required": [ "foo", "bar" ]
+        }
+    },
+    {
+        "title": "`required` has value false present in properties children",
+        "from": {
+            "properties": {
+                "foo": { "required": false }
+            }
+        },
+        "to": {
+            "properties": {
+                "foo": {}
+            }
+        }
+    },
+    {
+        "title": "`required` is an empty array in outer schema",
+        "from": {
+            "required": []
+        },
+        "to": {}
+    }
+]
