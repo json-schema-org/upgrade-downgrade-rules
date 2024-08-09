@@ -1,0 +1,12 @@
+{
+    "vocabulary": "core",
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "properties" },
+        { "operation": "has-key", "path": [ "properties", {} ], "value": "optional" },
+        { "operation": "equals", "path": [ "properties", {}, "optional" ], "value": false },
+        { "operation": "has-key", "path": [ "properties", {} ], "value": "required" }
+    ],
+    "transform": [
+        { "operation": "prefix-until-unique", "path": [ "properties", {}, "required" ], "value": "x-" } 
+    ]
+}

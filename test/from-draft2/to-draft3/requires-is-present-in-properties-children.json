@@ -1,0 +1,25 @@
+[
+    {
+        "title": "properties has children who have `requires` keyword",
+        "from": {
+            "properties": {
+                "foo": {
+                    "requires": "bar"
+                },
+                "bar": {
+                    "requires": { "type": "string"}
+                }
+            }
+        },
+        "to": {
+            "properties": {
+                "foo": {},
+                "bar": {}
+            },
+            "dependencies": {
+                "foo": "bar",
+                "bar": { "type": "string"}
+            }
+        }
+    }
+]

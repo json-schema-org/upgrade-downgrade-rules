@@ -1,0 +1,53 @@
+[
+    {
+        "title": "properties has children who have optional:false and required is already present",
+        "from": {
+            "properties": {
+                "foo": {
+                    "required": "string",
+                    "optional": false
+                }
+            }
+        },
+        "to": {
+            "properties": {
+                "foo": {
+                    "x-required": "string",
+                    "required": true
+                }
+            }
+        }
+    },
+    {
+        "title": "properties has children who have optional:false",
+        "from": {
+            "properties": {
+                "foo": {
+                    "optional": false
+                }
+            }
+        },
+        "to": {
+            "properties": {
+                "foo": {
+                    "required": true
+                }
+            }
+        }
+    },
+    {
+        "title": "properties has children who have optional:true",
+        "from": {
+            "properties": {
+                "foo": {
+                    "optional": true
+                }
+            }
+        },
+        "to": {
+            "properties": {
+                "foo": {}
+            }
+        }
+    }
+]
