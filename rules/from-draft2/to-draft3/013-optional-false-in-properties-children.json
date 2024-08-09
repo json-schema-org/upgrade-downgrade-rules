@@ -1,0 +1,13 @@
+{
+    "vocabulary": "core",
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "properties" },
+        { "operation": "has-key", "path": [ "properties", {} ], "value": "optional" },
+        { "operation": "equals", "path": [ "properties", {}, "optional" ], "value": false },
+        { "operation": "not-has-key", "path": [ "properties", {} ], "value": "required" }
+    ],
+    "transform": [
+        { "operation": "move", "to": [ "properties", {}, "required" ], "from": [ "properties", {}, "optional" ] },
+        { "operation": "replace", "path": [ "properties", {}, "required" ], "value": true }
+    ]
+}
