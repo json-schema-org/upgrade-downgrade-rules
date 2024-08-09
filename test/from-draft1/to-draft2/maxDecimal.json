@@ -1,0 +1,11 @@
+[
+    {
+        "title": "maxDecimal present in the schema",
+        "from": {
+            "maxDecimal": 2
+        },
+        "to": {
+            "maxDecimal": 0.01
+        }
+    }
+]

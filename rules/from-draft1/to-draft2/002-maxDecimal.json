@@ -1,0 +1,9 @@
+{
+    "vocabulary": "validation",
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "maxDecimal" }
+    ],
+    "transform": [
+        { "operation": "replace-with-1-by-ten-power-value", "path": [ "maxDecimal" ] } 
+    ]
+}
