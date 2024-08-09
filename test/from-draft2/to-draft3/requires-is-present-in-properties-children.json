@@ -1,6 +1,6 @@
 [
     {
-        "title": "Properties has children who have requires and dependencies is present in outer schema",
+        "title": "properties has children who have `requires` keyword",
         "from": {
             "properties": {
                 "foo": {
@@ -9,8 +9,7 @@
                 "bar": {
                     "requires": { "type": "string"}
                 }
-            },
-            "dependencies": {}
+            }
         },
         "to": {
             "properties": {

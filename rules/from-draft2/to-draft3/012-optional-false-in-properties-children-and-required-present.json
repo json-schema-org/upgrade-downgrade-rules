@@ -7,6 +7,6 @@
         { "operation": "has-key", "path": [ "properties", {} ], "value": "required" }
     ],
     "transform": [
-        { "operation": "remove", "path": [ "properties", {}, "required" ] } 
+        { "operation": "prefix-until-unique", "path": [ "properties", {}, "required" ], "value": "x-" } 
     ]
 }
