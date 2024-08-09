@@ -1,0 +1,9 @@
+{
+    "vocabulary": "none",
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "uniqueItems" }
+    ],
+    "transform": [
+        { "operation": "prefix-until-unique", "path": [ "uniqueItems" ], "value": "x-" } 
+    ]
+}
