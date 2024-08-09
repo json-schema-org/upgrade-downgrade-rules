@@ -1,0 +1,24 @@
+[
+    {
+        "title": "uniqueItems present in the schema",
+        "from": {
+            "uniqueItems": "newbie"
+        },
+        "to": {
+            "x-uniqueItems": "newbie"            
+        }
+    },
+    {
+        "title": "uniqueItems with uniqueItems having `x-` as prefix",
+        "from": {
+            "x-uniqueItems": "expert",
+            "x-x-uniqueItems": "master",
+            "uniqueItems": "newbie"
+        },
+        "to": {
+            "x-uniqueItems": "expert",
+            "x-x-uniqueItems": "master",
+            "x-x-x-uniqueItems": "newbie"
+        }
+    }
+]
