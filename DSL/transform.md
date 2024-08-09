@@ -156,6 +156,41 @@ Replaces the value at the given path with an absolute value.
 }
 ```
 
+### `replace-with-1-by-ten-power-value`
+
+Replaces the value at the given path with the result of 1 divided by 10 raised to the power of the current value.
+
+- **Takes**: `path`
+
+**Before**:
+
+```json
+{
+    "$schema": "http://json-schema.org/draft-01/schema#",
+    "exponent": 2,
+    "rate": 3
+}
+```
+
+**Transform**:
+
+```json
+[
+    { "operation": "replace-with-1-by-ten-power-value", "path": [ "exponent" ] },
+    { "operation": "replace-with-1-by-ten-power-value", "path": [ "rate" ] }
+]
+```
+
+**After**:
+
+```json
+{
+    "$schema": "http://json-schema.org/draft-02/schema#",
+    "exponent": 0.01,
+    "rate": 0.001
+}
+```
+
 ### `remove`
 
 Removes the key and its respective value at the given path.
