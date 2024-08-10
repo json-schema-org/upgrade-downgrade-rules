@@ -3,10 +3,9 @@
     "condition": [
         { "operation": "has-key", "path": [], "value": "extends" },
         { "operation": "type-is", "path": [ "extends" ], "value": "object" },
-        { "operation": "has-key", "path": [], "value": "allOf" }
+        { "operation": "not-has-key", "path": [], "value": "allOf" }
     ],
     "transform": [
-        { "operation": "add", "path": [ "allOf",  "-" ], "value": "temp" },
-        { "operation": "move", "to": [ "allOf", "-" ], "from": [ "extends" ] }
+        { "operation": "add", "path": [ "allOf" ], "value": [] }
     ]
 }
