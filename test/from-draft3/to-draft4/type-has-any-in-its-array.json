@@ -1,0 +1,9 @@
+[
+    {
+        "title": "`type` is present and contains `any` in it",
+        "from": {
+            "type": [ {}, "string", "any", { "type": "string" } ]
+        },
+        "to": {}
+    }
+]
