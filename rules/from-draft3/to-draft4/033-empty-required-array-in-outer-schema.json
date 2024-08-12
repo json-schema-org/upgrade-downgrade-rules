@@ -1,0 +1,10 @@
+{
+    "vocabulary": "core",
+    "condition": [
+        { "operation": "has-key", "path": [], "value": "required" },
+        { "operation": "size-equals", "path": [ "required" ], "value": 0 }
+    ],
+    "transform": [
+        { "operation": "remove", "path": [ "required" ] }
+    ]
+}
