@@ -6,8 +6,8 @@
         },
         "to": {
             "anyOf": [
-                {},
-                { "type": "string" }
+                { "type": "string" },
+                {}
             ]
         }
     },
@@ -19,8 +19,8 @@
         "to": {
             "anyOf": [
                 { "type": [ "object", "string" ] },
-                {},
-                { "type": "string" }
+                { "type": "string" },
+                {}
             ]
         }
     },

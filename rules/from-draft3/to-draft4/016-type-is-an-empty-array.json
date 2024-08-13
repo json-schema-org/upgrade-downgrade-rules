@@ -5,6 +5,6 @@
         { "operation": "size-equals", "path": [ "type" ], "value": 0 }
     ],
     "transform": [
-        { "operation": "remove", "to": [ "type" ] }
+        { "operation": "remove", "path": [ "type" ] }
     ]
 }
