@@ -1,0 +1,9 @@
+{
+    "vocabulary": "core",
+    "condition": [
+        { "operation": "has-key", "path": [], "value": "required" }
+    ],
+    "transform": [
+        { "operation": "replace", "path": [ "required" ], "value": [] }
+    ]
+}

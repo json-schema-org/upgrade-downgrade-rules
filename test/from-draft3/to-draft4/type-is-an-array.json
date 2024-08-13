@@ -1,0 +1,36 @@
+[
+    {
+        "title": "`type` is present is an array of objects",
+        "from": {
+            "type": [ {}, { "type": "string" } ]
+        },
+        "to": {
+            "anyOf": [
+                {},
+                { "type": "string" }
+            ]
+        }
+    },
+    {
+        "title": "`type` is present and contains objects and strings in it",
+        "from": {
+            "type": [ {}, "string", "object", { "type": "string" } ]
+        },
+        "to": {
+            "anyOf": [
+                { "type": [ "object", "string" ] },
+                {},
+                { "type": "string" }
+            ]
+        }
+    },
+    {
+        "title": "`type` is present and is an array of strings",
+        "from": {
+            "type": [ "string", "object" ]
+        },
+        "to": {
+            "type": [ "string", "object" ]
+        }
+    }
+]

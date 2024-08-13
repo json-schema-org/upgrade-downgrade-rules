@@ -1,0 +1,9 @@
+[
+    {
+        "title": "`type` is present and value equals to any",
+        "from": {
+            "type": "any"
+        },
+        "to": {}
+    }
+]
