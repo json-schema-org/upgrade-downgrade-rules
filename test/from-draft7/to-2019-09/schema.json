@@ -20,8 +20,8 @@
     {
         "title": "Nested matching schema",
         "from": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
-            "definitions": {
+            "$schema": "https://json-schema.org/draft-07/schema",
+            "properties": {
                 "foo": {
                     "$schema": "http://json-schema.org/draft-07/schema#"
                 }
@@ -29,7 +29,7 @@
         },
         "to": {
             "$schema": "https://json-schema.org/draft/2019-09/schema",
-            "definitions": {
+            "properties": {
                 "foo": {
                     "$schema": "https://json-schema.org/draft/2019-09/schema"
                 }
@@ -41,6 +41,7 @@
         "from": {
             "$schema": "https://json-schema.org/draft/2019-09/schema",
             "definitions": {
+
                 "foo": {
                     "$schema": "http://json-schema.org/draft-07/schema#"
                 }
@@ -71,3 +72,5 @@
         }
     }
 ]
+
+
