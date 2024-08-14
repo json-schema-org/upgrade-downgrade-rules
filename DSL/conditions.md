@@ -78,7 +78,7 @@ Here's a detailed explanation:
 }
 ```
 
-##### Condition for value a string
+##### Condition for value is a string
 
 ```json
 [
@@ -86,7 +86,7 @@ Here's a detailed explanation:
 ]
 ``` 
 
-##### Condition for value as an array
+##### Condition for value is an array
 
 ```json
 [
