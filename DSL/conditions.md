@@ -25,7 +25,7 @@ The DSL is structured as an array of conditions, with each condition containing 
 
 #### `match-all` Property Explanation
 
-The match-all property allows operations to be applied to all the keywords at a specified path.
+The match-all property allows operations to be applied to all the keywords at a specified path. Conditions evaluates to `true` if any of the iterable subschema matches.
 
 Here's a detailed explanation:
 
@@ -67,24 +67,32 @@ Here's a detailed explanation:
 
 `type-is`: Checks if the type of the target matches the specified type.
 
-- **Value**: Must be a string with one of the primitive types: `integer`, `boolean`, `array`, `object`, `string`, `number`.
+- **Value**: Must be either a string representing one of the primitive types—integer, boolean, array, object, string, number—or an array containing one or more of these types. In the case of an array, the schema will be valid if it matches any of the specified primitive types.
 
 ##### Schema
 
 ```json
 {    
-  "$schema": "https://json-schema.org/draft-03/schema",
-  "type": [ { "const": "hello" }, "number", "string" ]
+  "$schema": "https://json-schema.org/draft-02/schema",
+  "maximumCanEqual": false
 }
 ```
 
-##### Condition
+##### Condition for value is a string
 
 ```json
 [
-  { "path": [ "type" ], "operation": "type-is", "value": "array" }
+  { "path": [ "type" ], "operation": "type-is", "value": "boolean" }
 ]
-```
+``` 
+
+##### Condition for value is an array
+
+```json
+[
+  { "path": [ "type" ], "operation": "type-is", "value": [ "array", "object", "boolean" ] }
+]
+``` 
 
 #### Equality Checks
 
