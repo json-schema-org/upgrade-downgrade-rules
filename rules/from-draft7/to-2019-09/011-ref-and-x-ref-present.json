@@ -1,0 +1,10 @@
+{
+    "vocabulary": "core",
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "$ref" },
+        { "operation": "has-key", "path": [], "value": "x-$ref" }
+    ],
+    "transform": [
+        { "operation": "prefix-until-unique", "path": [ "x-$ref" ], "value": "x-" } 
+    ]
+}
