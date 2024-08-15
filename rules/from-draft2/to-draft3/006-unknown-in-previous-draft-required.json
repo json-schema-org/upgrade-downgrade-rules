@@ -1,7 +1,8 @@
 {
     "vocabulary": null,
     "condition": [ 
-        { "operation": "has-key", "path": [], "value": "required" }
+        { "operation": "has-key", "path": [], "value": "required" },
+        { "operation": "type-is", "path": [ "required" ], "value": [ "array", "object", "number", "integer", "string" ] }
     ],
     "transform": [
         { "operation": "prefix-until-unique", "path": [ "required" ], "value": "x-" } 
