@@ -2,28 +2,28 @@
     {
         "title": "$ref present in schema, with adjacent keywords",
         "from": {
-            "$id": "http://example.com",
+            "id": "http://example.com",
             "properties": {
                 "foo": {
                     "$ref": "/bar",
                     "type": "string",
-                    "$id": "zoo"
+                    "id": "zoo"
                 },
                 "bar": {
-                    "$id": "bar"
+                    "id": "bar"
                 }
             }
         },
         "to": {
-            "$id": "http://example.com",
+            "id": "http://example.com",
             "properties": {
                 "foo": {
                     "$ref": "/bar",
                     "x-type": "string",
-                    "x-$id": "zoo"
+                    "x-id": "zoo"
                 },
                 "bar": {
-                    "$id": "bar"
+                    "id": "bar"
                 }
             }
         }
