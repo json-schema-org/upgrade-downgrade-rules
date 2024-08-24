@@ -7,6 +7,7 @@
         { "operation": "contains-type", "path": [ "type" ], "value": "string" }
     ],
     "transform": [
-        { "operation": "add", "path": [ "anyOf", "-" ], "value": { "type": [] } }
+        { "operation": "add", "path": [ "anyOf", "-" ], "value": { "type": [] } },
+        { "operation": "add", "path": [ "type", "-" ], "value": true }
     ]
 }

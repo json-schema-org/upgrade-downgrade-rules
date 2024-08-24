@@ -1,0 +1,89 @@
+[
+    {
+        "title": "Reference to `type` when it has objects in its array",
+        "from": {
+            "type": [ {} ],
+            "$ref": "#/type/0"
+        },
+        "to": {
+            "$ref": "#/anyOf/0",
+            "anyOf": [
+                {}
+            ]
+        }
+    },
+    {
+        "title": "Reference to `type` when it has objects and string in its array",
+        "from": {
+            "type": [ "string", {} ],
+            "$ref": "#/type/1"
+        },
+        "to": {
+            "anyOf": [
+                { "type": ["string"] },
+                {}
+            ]
+        }
+    },
+    {
+        "title":"Reference to `disallow` when it has objects in its array",
+        "from": {
+            "disallow": [ {} ],
+            "$ref": "#/disallow/0"
+        },
+        "to": {
+            "allOf": [
+                { "not": {} }
+            ],
+            "$ref": "#/allOf/0/not"
+        }
+    },
+    {
+        "title": "Reference to `disallow` when it has objects and string in its array",
+        "from": {
+            "disallow": [ "string", {} ],
+            "$ref": "#/disallow/1"
+        },
+        "to": {
+            "allOf": [
+                {
+                    "not": {}
+                },
+                {
+                    "not": {
+                        "type": [
+                            "string"
+                        ]
+                    }
+                }
+            ],
+            "$ref": "#/allOf/0/not"
+        }
+    },
+    {
+        "title": "Reference to `extends` when its an array",
+        "from": {
+            "extends": [ {}, { "type": "object" } ],
+            "$ref": "#/extends/0"
+        },
+        "to": {
+            "allOf": [
+                {}
+            ],
+            "$ref": "#/allOf/1"
+        }
+    },
+    {
+        "title": "Reference to `extends` when its an object",
+        "from": {
+            "extends": {},
+            "$ref": "#/extends"
+        },
+        "to": {
+            "allOf": [
+                {}
+            ],
+            "$ref": "#/allOf/0"
+        }
+    }
+]

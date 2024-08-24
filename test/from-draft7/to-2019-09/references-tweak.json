@@ -1,0 +1,52 @@
+[
+    {
+        "title": "Reference to definitions",
+        "from": {
+            "allOf": [
+                {
+                  "$ref": "#/definitions/foo"
+                }
+            ],
+            "definitions": {
+                "foo": {}
+            }
+        },
+        "to": {
+            "allOf": [
+                {
+                  "$ref": "#/$defs/foo"
+                }
+            ],
+            "$defs": {
+                "foo": {}
+            }
+        }
+    },
+    {
+        "title": "Reference to dependencies, child is a schema",
+        "from": {
+            "allOf": [
+                {
+                  "$ref": "#/dependencies/foo"
+                }
+            ],
+            "dependencies": {
+                "foo": {
+                    "type": "string"
+                }
+            }
+        },
+        "to": {
+            "allOf": [
+                {
+                  "$ref": "#/dependentSchemas/foo"
+                }
+            ],
+            "dependentSchemas": {
+                "foo": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+]

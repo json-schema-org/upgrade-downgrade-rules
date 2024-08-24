@@ -1,0 +1,76 @@
+[
+    {
+        "title": "Reference to contains",
+        "from": {
+            "$ref": "#/contains",
+            "contains": {
+                "type": "string"
+            }
+        },
+        "to": {
+            "$ref": "#/allOf/0/not/not/contains",
+            "allOf": [
+                {
+                    "not": {
+                        "not": {
+                            "contains": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "title":"Reference to items is an array",
+        "from": {
+            "$ref": "#/items/0",
+            "items": [
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "to": {
+            "$ref": "#/prefixItems/0",
+            "prefixItems": [
+                {
+                    "type": "string"
+                }
+            ]
+        }
+    },
+    {
+        "title":"Reference to items is an object",
+        "from": {
+            "$ref": "#/items",
+            "items": {
+                "type": "string"
+            }
+        },
+        "to": {
+            "$ref": "#/items",
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+    {
+        "title":"Reference to additionalItems is an object, items is an array",
+        "from": {
+            "$ref": "#/additionalItems",
+            "items": [ {} ],
+            "additionalItems": {
+                "type": "string"
+            }
+        },
+        "to": {
+            "$ref": "#/items",
+            "prefixItems": [ {} ],
+            "items": {
+                "type": "string"
+            }
+        }
+    }
+]
