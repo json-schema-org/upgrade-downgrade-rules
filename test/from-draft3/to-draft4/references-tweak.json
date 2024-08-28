@@ -1,0 +1,141 @@
+[
+    {
+        "title": "Reference to `type` when it has objects in its array",
+        "from": {
+            "type": [ {} ],
+            "properties": {
+                "foo": {
+                    "$ref": "#/type/0"
+                }
+            }
+        },
+        "to": {
+            "anyOf": [
+                {}
+            ],
+            "properties": {
+                "foo": {
+                    "$ref": "#/anyOf/0"
+                }
+            }
+        }
+    },
+    {
+        "title": "Reference to `type` when it has objects and string in its array",
+        "from": {
+            "type": [ "string", {} ],
+            "properties": {
+                "foo": {
+                    "$ref": "#/type/1"
+                }
+            }
+        },
+        "to": {
+            "anyOf": [
+                { "type": ["string"] },
+                {}
+            ],
+            "properties": {
+                "foo": {
+                    "$ref": "#/anyOf/1"
+                }
+            }
+        }
+    },
+    {
+        "title":"Reference to `disallow` when it has objects in its array",
+        "from": {
+            "disallow": [ {} ],
+            "properties": {
+                "foo": {
+                    "$ref": "#/disallow/0"
+                }
+            }
+        },
+        "to": {
+            "allOf": [
+                { "not": {} }
+            ],
+            "properties": {
+                "foo": {
+                    "$ref": "#/allOf/0/not"
+                }
+            }
+        }
+    },
+    {
+        "title": "Reference to `disallow` when it has objects and string in its array",
+        "from": {
+            "disallow": [ "string", {} ],
+            "properties": {
+                "foo": {
+                    "$ref": "#/disallow/1"
+                }
+            }
+        },
+        "to": {
+            "allOf": [
+                {
+                    "not": {}
+                },
+                {
+                    "not": {
+                        "type": [
+                            "string"
+                        ]
+                    }
+                }
+            ],
+            "properties": {
+                "foo": {
+                    "$ref": "#/allOf/0/not"
+                }
+            }
+        }
+    },
+    {
+        "title": "Reference to `extends` when its an array",
+        "from": {
+            "extends": [ {}, { "type": "object" } ],
+            "properties": {
+                "foo": {
+                    "$ref": "#/extends/0"
+                }
+            }
+        },
+        "to": {
+            "allOf": [
+                {
+                  "type": "object"
+                },
+                {}
+            ],
+            "properties": {
+                "foo": {
+                    "$ref": "#/allOf/0"
+                }
+            }
+        }
+    },
+    {
+        "title": "Reference to `extends` when its an object",
+        "from": {
+            "extends": {},
+            "properties": {
+                "foo": {
+                    "$ref": "#/extends"
+                }
+            }
+        },
+        "to": {
+            "allOf": [
+                {}
+            ],
+            "properties": {
+                "foo": {
+                    "$ref": "#/allOf/0"
+                }
+            }
+        }
+    }
+]

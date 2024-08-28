@@ -7,6 +7,6 @@
         { "operation": "not-has-key", "path": [], "value": "allOf" }
     ],
     "transform": [
-        { "operation": "move", "to": [ "allOf" ], "from": [ "extends" ] }
+        { "operation": "add", "path": [ "allOf" ], "value": [] }
     ]
 }
