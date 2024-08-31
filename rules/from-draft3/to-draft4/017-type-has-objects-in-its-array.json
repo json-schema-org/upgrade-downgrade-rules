@@ -1,0 +1,12 @@
+{
+    "vocabulary": "core",
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "type" },
+        { "operation": "type-is", "path": [ "type" ], "value": "array" },
+        { "operation": "has-key", "path": [], "value": "anyOf" },
+        { "operation": "type-is", "path": [ "type", {} ], "value": "object" } 
+    ],
+    "transform": [
+        { "operation": "remove-and-append", "to": [ "anyOf" ], "from": [ "type", {} ] }
+    ]
+}

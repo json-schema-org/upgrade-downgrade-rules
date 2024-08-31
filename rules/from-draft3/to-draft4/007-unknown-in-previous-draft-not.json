@@ -1,0 +1,9 @@
+{
+    "vocabulary": "core",
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "not" }
+    ],
+    "transform": [
+        { "operation": "prefix-until-unique", "path": [ "not" ], "value": "x-" } 
+    ]
+}

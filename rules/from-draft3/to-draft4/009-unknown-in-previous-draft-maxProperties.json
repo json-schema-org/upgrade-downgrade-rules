@@ -1,0 +1,9 @@
+{
+    "vocabulary": "core",
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "maxProperties" }
+    ],
+    "transform": [
+        { "operation": "prefix-until-unique", "path": [ "maxProperties" ], "value": "x-" } 
+    ]
+}

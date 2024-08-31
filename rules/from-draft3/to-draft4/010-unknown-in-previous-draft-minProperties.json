@@ -1,0 +1,9 @@
+{
+    "vocabulary": "core",
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "minProperties" }
+    ],
+    "transform": [
+        { "operation": "prefix-until-unique", "path": [ "minProperties" ], "value": "x-" } 
+    ]
+}
