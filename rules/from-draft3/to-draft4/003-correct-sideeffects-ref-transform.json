@@ -1,0 +1,9 @@
+{
+    "vocabulary": "core",
+    "condition": [ 
+        { "operation": "has-key", "path": [], "value": "x-$ref" }
+    ],
+    "transform": [
+        { "operation": "move", "to": [ "$ref" ], "from": [ "x-$ref" ] } 
+    ]
+}
